@@ -31,6 +31,9 @@ local autocmds = {
         {'Filetype python set foldmethod=syntax'};
         {'Filetype python set foldexpr=nvim_treesitter#foldexpr()'};
     };
+    neorg = {
+        {'Filetype *.norg set :TZAtaraxis'};
+    }
 }
 
 nvim_create_augroups(autocmds)

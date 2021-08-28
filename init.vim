@@ -14,28 +14,12 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-" lua require('completion')
-" lua require('lsp')
-lua require('keybinds')
-lua require('treesitter')
-lua require('startify')
-lua require('git')
-
-lua require('lang')
-
-" set Filetype cpp set foldmethod=syntax
-
-let g:edge_style = 'neon'
-let g:edge_current_word = 'bold'
-
-colorscheme edge
+lua require('core')
+lua require('dev')
+lua require('appearance')
 
 filetype on
 filetype plugin on
-
-" autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" General keybinds
 
 tnoremap <Esc> <C-\><C-n>
 
@@ -49,9 +33,6 @@ map <silent> <F10> :call OpenTerm()<CR>
 
 " tagbar
 map <silent> <F12> :Vista coc<CR>
-
-" Java keybinds
-autocmd Filetype java map <F4> :ClangFormat<CR>
 
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -117,13 +98,6 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Latex keybinds
-autocmd Filetype tex setl updatetime=10
-
-" Java settings"
-autocmd Filetype java set tabstop=4
-autocmd Filetype java set shiftwidth=4
-
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
@@ -162,49 +136,15 @@ set signcolumn=yes
 
 syntax on
 
-hi GitSignsCurrentLineBlame guifg=grey
+lua vim.api.nvim_command('hi GitSignsCurrentLineBlame guifg=grey')
 
-let g:move_map_keys = 0
+lua vim.g.move_map_keys = 0
 
-let g:Powerline_symbols = 'fancy'
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'edge'
-let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
-let g:UltiSnipsExpandTrigger="<C-g>"
-let g:UltiSnipsJumpForwardTrigger="<C-r>"
-let g:UltiSnipsJumpBackwardTrigger="<C-c>"
+lua vim.g.Powerline_symbols = 'fancy'
+lua vim.g.airline_powerline_fonts = 1
+lua vim.g.airline_theme = 'edge'
 
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-let g:java_highlight_all = 1
-
-"""""""""""
-" Vista  "
-"""""""""""
-let g:vista_executive_for = {
-        \ 'cpp' : 'coc',
-        \ 'java' : 'coc',
-        \ 'python' : 'coc',
-        \ }
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista#renderer#enable_icon = 1
-let g:vista_sidebar_width = 50
-
-let g:vimwiki_list = [{'path': '~/vimwiki/'}]
-
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-\	'guifgs': ['#7cd1fd', '#939ede', '#ffcb6b', '#aa7fca', '#ff8765'],
-\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-\	'guis': [''],
-\	'cterms': [''],
-\	'operators': '_,_',
-\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-\	'separately': {
-\		'*': {},
-\       'cmake': 0,
-\       'nerdtree': 0
-\   }
-\}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 au BufRead *.pdf sil exe "!xdg-open " . shellescape(expand("%:p")) | bd | let &ft=&ft
+

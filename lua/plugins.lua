@@ -1,13 +1,19 @@
-
 return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
     -- Theming
     use 'sainnhe/edge'
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
+    use {
+        'glepnir/galaxyline.nvim',
+        branch = 'main',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
     use 'ap/vim-css-color'
+    use 'kyazdani42/nvim-web-devicons'
+
+    -- Zen
+    use 'Pocco81/TrueZen.nvim'
 
     -- Utility
     use 'nvim-lua/popup.nvim'
@@ -17,16 +23,17 @@ return require('packer').startup(function()
     use 'Konfekt/FastFold'
     use {
         'nvim-telescope/telescope.nvim',
-        requires = { 'nvim-lua/plenary.nvim' }
+        requires = 'nvim-lua/plenary.nvim'
     }
     use {
         'lewis6991/gitsigns.nvim',
-        requires = { 'nvim-lua/plenary.nvim' }
+        requires = 'nvim-lua/plenary.nvim'
     }
-    -- use {
-    --     'kyazdani42/nvim-tree.lua',
-    --     requires = 'kyazdani42/nvim-web-devicons'
-    -- }
+    use { 
+        'vhyrro/neorg',
+        branch = 'unstable',
+        requires = 'nvim-lua/plenary.nvim',
+    }
 
     -- LSP
     use 'neoclide/coc.nvim'
