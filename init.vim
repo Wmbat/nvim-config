@@ -16,9 +16,6 @@ set nowritebackup
 " Better display for messages
 set cmdheight=2
 
-" You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
@@ -37,6 +34,3 @@ function OpenTerm()
 endfunction
 
 map <silent> <F10> :call OpenTerm()<CR>
-
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

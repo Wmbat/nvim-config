@@ -14,7 +14,7 @@ local autocmds = {
         {'FileType cpp set shiftwidth=3'};
         -- Keymaps 
         {'FileType cpp map <space>F :ClangFormat<CR>'}; 
-        {'FileType cpp map <space>S :CocCommand clangd.switchSourceHeader<CR>'};
+        {'FileType cpp map <space>S <cmd>ClangdSwitchSourceHeader<CR>'}; 
     };
     golang = {
         -- Settings

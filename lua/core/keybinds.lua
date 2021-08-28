@@ -40,13 +40,19 @@ vim.api.nvim_set_keymap('n', ']t', '<cmd>lua require\"gitsigns.actions\".next_hu
 vim.api.nvim_set_keymap('n', ']n', '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>', opts)
 vim.api.nvim_set_keymap('n', 'ph', '<cmd>lua require\"gitsigns.actions\".preview_hunk()<CR>', opts)
 
--- coc-nvim
+-- Completion
 
-vim.api.nvim_set_keymap('n', 'gd', '<Plug>(coc-definition)', { silent=true })
-vim.api.nvim_set_keymap('n', 'gD', '<Plug>(coc-references)', { silent=true })
-vim.api.nvim_set_keymap('n', 'gi', '<Plug>(coc-implementation)', { silent=true })
+local function t(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
 
-vim.api.nvim_set_keymap('n', '<space>m', '<Plug>(coc-rename)', { silent=true })
-vim.api.nvim_set_keymap('n', '<space>a', '<Plug>(coc-fix-current)', { silent=true })
-vim.api.nvim_set_keymap('n', '<space>n', '<Plug>(coc-diagnostic-prev)', { silent=true })
-vim.api.nvim_set_keymap('n', '<space>t', '<Plug>(coc-diagnostic-next)', { silent=true })
+function _G.smart_tab()
+    return vim.fn.pumvisible() == 1 and t'<C-n>' or t'<Tab>'
+end
+
+function _G.smart_s_tab()
+    return vim.fn.pumvisible() == 1 and t'<C-p>' or t'<S-Tab>'
+end
+
+vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.smart_tab()', {expr = true, noremap = true})
+vim.api.nvim_set_keymap('i', '<S-Tab>', 'v:lua.smart_s_tab()', {expr = true, noremap = true})

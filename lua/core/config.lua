@@ -1,10 +1,10 @@
 vim.o.completeopt = 'menuone,noselect,noinsert'
+vim.o.updatetime = 300
 
 vim.opt.termguicolors = true
 
 vim.opt.hidden = true
 
-vim.opt.numberwidth = 5
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
