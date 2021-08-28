@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/wmbat/.config/picom'
+let g:netrw_dirhist_8='/home/wmbat/Documents/concordia/COMP_425/assignments/A2_40022514/source_code'
+let g:netrw_dirhist_7='/home/wmbat/Documents/concordia/COMP_425/assignments/A2_40022514/binaries'
+let g:netrw_dirhist_6='/home/wmbat/Documents/concordia/COMP_442/project/toy_compiler'
+let g:netrw_dirhist_5='/home/wmbat/test'
+let g:netrw_dirhist_4='/home/wmbat/projects/libcaeruleum/libcaeruleum'
+let g:netrw_dirhist_3='/home/wmbat/projects/libcaeruleum'
+let g:netrw_dirhist_2='/home/wmbat/Documents/concordia/COMP_442/assignments/assignment_1/toy_compiler/.cache'
+let g:netrw_dirhist_1='/home/wmbat/projects/vermillon'
+let g:netrw_dirhist_0='/home/wmbat/projects'
