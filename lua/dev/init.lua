@@ -1,3 +1,4 @@
+require('dev.discord')
 require('dev.git')
 require('dev.lang')
 require('dev.org')
