@@ -1,6 +1,7 @@
 require('dev.discord')
 require('dev.git')
 require('dev.lang')
+require('dev.lsp')
 require('dev.org')
 require('dev.treesitter')
 require('dev.vimtex')

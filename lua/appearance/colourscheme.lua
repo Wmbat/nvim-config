@@ -3,4 +3,4 @@ vim.g.edge_current_word = 'bold'
 
 vim.cmd('colorscheme edge')
 
-vim.api.nvim_command('hi GitSignsCurrentLineBlame guifg=grey')
+vim.api.nvim_command('hi GitSignsCurrentLineBlame guifg=#7f8394')

@@ -4,7 +4,9 @@ require('neorg').setup {
         ["core.highlights"] = {},
         ["core.keybinds"] = {},
         ["core.norg.concealer"] = {},
-        ["core.norg.completion"] = {},
+        ["core.norg.completion"] = {
+                
+        },
         ["core.norg.dirman"] = {
             config = {
                 workspaces = {

@@ -1,0 +1,112 @@
+local lsp = require('lspconfig')
+
+on_attach = function(client, bufnr)
+    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+    -- Enable completion triggered by <c-x><c-o>
+    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+    -- Mappings.
+    local opts = { noremap=true, silent=true }
+
+
+    vim.api.nvim_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+    vim.api.nvim_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+    
+    vim.api.nvim_set_keymap('n', '<space>h', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    -- vim.api.nvim_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    vim.api.nvim_set_keymap('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+    -- vim.api.nvim_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+    -- vim.api.nvim_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+    -- vim.api.nvim_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+    -- vim.api.nvim_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+    -- 
+    vim.api.nvim_set_keymap('n', '<space>m', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    -- vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+    vim.api.nvim_set_keymap('n', '<space>n', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+    vim.api.nvim_set_keymap('n', '<space>t', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+    -- vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+    
+    require('completion').on_attach(client, bufnr)
+end
+
+require('lspkind').init({
+    -- with_text = true,
+    -- symbol_map = {
+    --   Text = '',
+    --   Method = 'ƒ',
+    --   Function = '',
+    --   Constructor = '',
+    --   Variable = '',
+    --   Class = '',
+    --   Interface = 'ﰮ',
+    --   Module = '',
+    --   Property = '',
+    --   Unit = '',
+    --   Value = '',
+    --   Enum = '了',
+    --   Keyword = '',
+    --   Snippet = '﬌',
+    --   Color = '',
+    --   File = '',
+    --   Folder = '',
+    --   EnumMember = '',
+    --   Constant = '',
+    --   Struct = ''
+    -- },
+})
+
+local function switch_source_header_splitcmd(bufnr, splitcmd)
+    bufnr = require('lspconfig').util.validate_bufnr(bufnr)
+    local params = { uri = vim.uri_from_bufnr(bufnr) }
+    vim.lsp.buf_request(bufnr, 'textDocument/switchSourceHeader', params, function(err, _, result)
+        if err then error(tostring(err)) end
+        if not result then print ("Corresponding file can’t be determined") return end
+        vim.api.nvim_command(splitcmd..' '..vim.uri_to_fname(result))
+    end)
+end
+
+lsp.clangd.setup {
+    on_attach = on_attach,
+    default_config = {
+        cmd = {
+            "clangd", "--background-index", "--pch-storage=memory",
+            "--clang-tidy", "--suggest-missing-includes"
+        },
+        filetypes = {'c', 'cpp'},
+        root_dir = lsp.util.root_pattern('compile_commands.json',
+                                         'compile_flags.txt',
+                                         '.git'),
+    },
+    commands = {
+        ClangdSwitchSourceHeader = {
+    		function() switch_source_header_splitcmd(0, "edit") end;
+    		description = "Open source/header in current buffer";
+    	},
+    	ClangdSwitchSourceHeaderVSplit = {
+    		function() switch_source_header_splitcmd(0, "vsplit") end;
+    		description = "Open source/header in a new vsplit";
+    	},
+    	ClangdSwitchSourceHeaderSplit = {
+    		function() switch_source_header_splitcmd(0, "split") end;
+    		description = "Open source/header in a new split";
+    	}
+    }
+}
+
+lsp.pyright.setup {
+    on_attach = on_attach,
+    root_dir = lsp.util.root_pattern('.git', vim.fn.getcwd())
+}
+
+vim.g.completion_chain_complete_list = {
+  default = {
+    { complete_items = { 'lsp' } },
+    { complete_items = { 'buffers' } },
+    { mode = { '<c-p>' } },
+    { mode = { '<c-n>' } }
+  },
+}

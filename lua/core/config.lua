@@ -1,3 +1,5 @@
+vim.o.completeopt = 'menuone,noselect,noinsert'
+
 vim.opt.termguicolors = true
 
 vim.opt.hidden = true
