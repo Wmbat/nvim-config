@@ -34,3 +34,5 @@ function OpenTerm()
 endfunction
 
 map <silent> <F10> :call OpenTerm()<CR>
+
+imap <silent> <c-p> <Plug>(completion_trigger)

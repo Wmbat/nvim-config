@@ -40,11 +40,12 @@ return require('packer').startup(function()
     }
 
     -- LSP
-    -- use 'neoclide/coc.nvim'
     use 'neovim/nvim-lspconfig'
     use 'onsails/lspkind-nvim'
-    use 'nvim-lua/completion-nvim'
-    use 'steelsojka/completion-buffers'
+    use {
+        "hrsh7th/nvim-cmp",
+        requires = { "hrsh7th/cmp-buffer", }
+    }
     use 'nvim-treesitter/nvim-treesitter'
 
     -- C++ 
