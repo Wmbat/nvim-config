@@ -1,10 +1,12 @@
-vim.g.nvim_tree_side = 'right'
-vim.g.nvim_tree_width = 60
+local tree_cb = require('nvim-tree.config').nvim_tree_callback
+
+vim.g.nvim_tree_side = 'left'
+vim.g.nvim_tree_width = 40
 vim.g.nvim_tree_gitignore = 1
 vim.g.nvim_tree_auto_open = 0
 vim.g.nvim_tree_auto_close = 0
 vim.g.nvim_tree_auto_ignore_ft = { 'startify', 'dashboard' }
-vim.g.nvim_tree_quit_on_open = 1
+vim.g.nvim_tree_quit_on_open = 0
 vim.g.nvim_tree_follow = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_hide_dotfiles = 1
@@ -55,4 +57,8 @@ vim.g.nvim_tree_icons = {
         warning = "",
         error = "",
     },
+}
+vim.g.nvim_tree_disable_default_keybindings = 0
+vim.g.nvim_tree_bindings = {
+    { key = 's', cb = tree_cb("edit") }
 }

@@ -25,9 +25,7 @@ vim.api.nvim_set_keymap('n', '<space>fh', [[<cmd>lua require('telescope.builtin'
 
 -- File Explorer
 
--- vim.api.nvim_set_keymap('n', '<space>j', ':NvimTreeToggle<CR>', opts)
-
-vim.api.nvim_set_keymap('n', '<space>j', ':CocCommand explorer<cr>', opts)
+vim.api.nvim_set_keymap('n', '<space>j', ':NvimTreeToggle<CR>', opts)
 
 -- vim-move 
 
@@ -35,12 +33,6 @@ vim.api.nvim_set_keymap('v', '<A-t>', '<Plug>MoveBlockDown', {})
 vim.api.nvim_set_keymap('v', '<A-n>', '<Plug>MoveBlockUp', {})
 vim.api.nvim_set_keymap('n', '<A-t>', '<Plug>MoveLineDown', {})
 vim.api.nvim_set_keymap('n', '<A-n>', '<Plug>MoveLineUp', {})
-
--- vgit
-
--- vim.api.nvim_set_keymap('n', ']t', ':VGit hunk_up<CR>', opts)
--- vim.api.nvim_set_keymap('n', ']n', ':VGit hunk_down<CR>', opts)
--- vim.api.nvim_set_keymap('n', '<space>b', ':VGit show_blame<CR>', opts)
  
 -- gitsigns
 
@@ -48,13 +40,7 @@ vim.api.nvim_set_keymap('n', ']t', '<cmd>lua require\"gitsigns.actions\".next_hu
 vim.api.nvim_set_keymap('n', ']n', '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>', opts)
 vim.api.nvim_set_keymap('n', 'ph', '<cmd>lua require\"gitsigns.actions\".preview_hunk()<CR>', opts)
 
--- clangd
-
--- vim.api.nvim_set_keymap('n', '<space>s', '<cmd>ClangdSwitchSourceHeader<CR>', opts)
-
 -- coc-nvim
-
--- vim.api.nvim_set_keymap('n', '<space>d', ':<C-u>CocDiagnostic<cr>', opts)
 
 vim.api.nvim_set_keymap('n', 'gd', '<Plug>(coc-definition)', { silent=true })
 vim.api.nvim_set_keymap('n', 'gD', '<Plug>(coc-references)', { silent=true })
