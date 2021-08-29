@@ -41,15 +41,10 @@ cmp.setup {
 local lsp = require('lspconfig')
 
 on_attach = function(client, bufnr)
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-    -- Enable completion triggered by <c-x><c-o>
-    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- Mappings.
     local opts = { noremap=true, silent=true }
-
 
     vim.api.nvim_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     vim.api.nvim_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -70,32 +65,6 @@ on_attach = function(client, bufnr)
     vim.api.nvim_set_keymap('n', '<space>t', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
     -- vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 end
-
-require('lspkind').init({
-    -- with_text = true,
-    -- symbol_map = {
-    --   Text = '',
-    --   Method = 'ƒ',
-    --   Function = '',
-    --   Constructor = '',
-    --   Variable = '',
-    --   Class = '',
-    --   Interface = 'ﰮ',
-    --   Module = '',
-    --   Property = '',
-    --   Unit = '',
-    --   Value = '',
-    --   Enum = '了',
-    --   Keyword = '',
-    --   Snippet = '﬌',
-    --   Color = '',
-    --   File = '',
-    --   Folder = '',
-    --   EnumMember = '',
-    --   Constant = '',
-    --   Struct = ''
-    -- },
-})
 
 lsp.clangd.setup {
     on_attach = on_attach,
