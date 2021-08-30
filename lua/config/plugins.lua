@@ -39,6 +39,9 @@ return require('packer').startup(function()
         requires = 'kyazdani42/nvim-web-devicons'
     }
 
+    -- Terminal
+    use 'akinsho/toggleterm.nvim'
+
     -- LSP
     use 'neovim/nvim-lspconfig'
     use 'onsails/lspkind-nvim'

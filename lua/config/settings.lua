@@ -18,13 +18,10 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 
 vim.opt.signcolumn = 'yes'
+vim.opt.hidden = true
 
 vim.opt.shortmess:append({c = true})
 
 -- Globals
 
 vim.g.move_map_keys = 0
-
-vim.g.Powerline_symbols = 'fancy'
-vim.g.airline_powerline_fonts = 1
-vim.g.airline_theme = 'edge'
