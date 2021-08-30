@@ -56,3 +56,8 @@ end
 
 vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.smart_tab()', {expr = true, noremap = true})
 vim.api.nvim_set_keymap('i', '<S-Tab>', 'v:lua.smart_s_tab()', {expr = true, noremap = true})
+
+-- luasnip
+
+vim.api.nvim_set_keymap("i", "<C-j>", "<Plug>luasnip-next-choice", {})
+vim.api.nvim_set_keymap("s", "<C-j>", "<Plug>luasnip-next-choice", {})

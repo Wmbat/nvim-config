@@ -5,7 +5,9 @@ require('neorg').setup {
         ["core.keybinds"] = {},
         ["core.norg.concealer"] = {},
         ["core.norg.completion"] = {
-                
+            config = {
+                engine = "nvim-cmp",
+            },                           
         },
         ["core.norg.dirman"] = {
             config = {

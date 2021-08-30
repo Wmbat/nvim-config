@@ -43,10 +43,14 @@ return require('packer').startup(function()
     use 'neovim/nvim-lspconfig'
     use 'onsails/lspkind-nvim'
     use {
-        "hrsh7th/nvim-cmp",
-        requires = { "hrsh7th/cmp-buffer", }
+        'hrsh7th/nvim-cmp',
+        requires = { 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-nvim-lsp' }
     }
     use 'nvim-treesitter/nvim-treesitter'
+
+    -- Snippets
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'L3MON4D3/LuaSnip'
 
     -- C++ 
     use 'rhysd/vim-clang-format'

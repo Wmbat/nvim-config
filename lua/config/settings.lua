@@ -1,5 +1,6 @@
 vim.o.completeopt = 'menuone,noselect,noinsert'
 vim.o.updatetime = 300
+vim.o.cmdheight = 2
 
 vim.opt.termguicolors = true
 
@@ -17,6 +18,8 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 
 vim.opt.signcolumn = 'yes'
+
+vim.opt.shortmess:append({c = true})
 
 -- Globals
 
