@@ -9,7 +9,7 @@ local autocmds = {
     cpp = {
         -- Settings
         {'FileType cpp set foldmethod=expr'};
-        {'FileType go set foldexpr=nvim_treesitter#foldexpr()'};
+        {'FileType cpp set foldexpr=nvim_treesitter#foldexpr()'};
         {'FileType cpp set tabstop=3'};
         {'FileType cpp set shiftwidth=3'};
         -- Keymaps 

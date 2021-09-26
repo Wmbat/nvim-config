@@ -49,7 +49,10 @@ return require('packer').startup(function()
         'hrsh7th/nvim-cmp',
         requires = { 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-nvim-lsp' }
     }
-    use 'nvim-treesitter/nvim-treesitter'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 
     -- Snippets
     use 'saadparwaiz1/cmp_luasnip'

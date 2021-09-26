@@ -46,3 +46,15 @@ lsp.pyright.setup {
     root_dir = lsp.util.root_pattern('.git', vim.fn.getcwd()),
     capabilities = capabilities
 }
+
+lsp.gopls.setup {
+    on_attach = on_attach,
+    root_dir = lsp.util.root_pattern('.git', vim.fn.getcwd()),
+    capabilities = capabilities
+}
+
+lsp.clojure_lsp.setup {
+    on_attach = on_attach,
+    root_dir = lsp.util.root_pattern('.git', vim.fn.getcwd()),
+    capabilities = capabilities
+}

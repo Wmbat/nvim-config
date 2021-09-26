@@ -25,3 +25,5 @@ vim.opt.shortmess:append({c = true})
 -- Globals
 
 vim.g.move_map_keys = 0
+
+vim.cmd('autocmd BufNewFile,BufRead *.mpp :set filetype=cpp')

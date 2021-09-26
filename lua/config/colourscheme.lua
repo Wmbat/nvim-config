@@ -7,13 +7,18 @@ vim.api.nvim_command('hi GitSignsCurrentLineBlame guifg=#7f8394')
 
 vim.api.nvim_command('hi LspDiagnosticsVirtualTextError guifg=#ec7279')
 vim.api.nvim_command('hi LspDiagnosticsVirtualTextWarning guifg=#deb974')
-vim.api.nvim_command('hi LspDiagnosticsVirtualTextInformation guifg=#a0c980')
+vim.api.nvim_command('hi LspDiagnosticsVirtualTextInformation guifg=#6bb3e3')
 vim.api.nvim_command('hi LspDiagnosticsVirtualTextHint guifg=#7f8394')
 
 vim.api.nvim_command('hi LspDiagnosticsFloatingError guifg=#ec7279')
 vim.api.nvim_command('hi LspDiagnosticsFloatingWarning guifg=#deb974')
-vim.api.nvim_command('hi LspDiagnosticsFloatingInformation guifg=#a0c980')
+vim.api.nvim_command('hi LspDiagnosticsFloatingInformation guifg=#6bb3e3')
 vim.api.nvim_command('hi LspDiagnosticsFloatingHint guifg=#7f8394')
+
+vim.api.nvim_command('hi LspDiagnosticsSignError guifg=#ec7279')
+vim.api.nvim_command('hi LspDiagnosticsSignWarning guifg=#deb974')
+vim.api.nvim_command('hi LspDiagnosticsSignInformation guifg=#6bb3e3')
+vim.api.nvim_command('hi LspDiagnosticsSignHint guifg=#7f8394')
 
 vim.fn.sign_define('LspDiagnosticsSignError', { 
     texthl = 'LspDiagnosticsSignError',

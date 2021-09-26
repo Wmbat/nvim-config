@@ -9,7 +9,7 @@ parser_configs.norg = {
 }
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "c", "cpp", "python", "lua", "go", "json", "norg" },
+  ensure_installed = { 'c', 'cpp', 'python', 'lua', 'go', 'json', 'norg', 'clojure' },
   highlight = {
     enable = true,
   }
