@@ -16,3 +16,5 @@ require('neorg').setup {
         }
     },
 }
+
+vim.opt.conceallevel = 2

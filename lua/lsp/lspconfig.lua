@@ -58,3 +58,20 @@ lsp.clojure_lsp.setup {
     root_dir = lsp.util.root_pattern('.git', vim.fn.getcwd()),
     capabilities = capabilities
 }
+
+vim.fn.sign_define('LspDiagnosticsSignError', { 
+    text = '', 
+    texthl = 'LspDiagnosticsSignError',
+    numhl = 'LspDiagnosticsSignError' })
+vim.fn.sign_define('LspDiagnosticsSignWarning', { 
+    text = '',
+    texthl = 'LspDiagnosticsSignWarning',
+    numhl = 'LspDiagnosticsSignWarning'})
+vim.fn.sign_define('LspDiagnosticsSignHint', { 
+    text = '', 
+    texthl = 'LspDiagnosticsSignHint',
+    numhl = 'LspDiagnosticsSignHint', })
+vim.fn.sign_define('LspDiagnosticsSignInformation', { 
+    text = '', 
+    texthl = 'LspDiagnosticsSignInformation',
+    numhl = 'LspDiagnosticsSignInformation', })

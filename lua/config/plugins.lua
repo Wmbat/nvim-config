@@ -53,6 +53,10 @@ return require('packer').startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use {
+        'p00f/nvim-ts-rainbow',
+        requires = { 'nvim-treesitter/nvim-treesitter' }
+    }
 
     -- Snippets
     use 'saadparwaiz1/cmp_luasnip'
