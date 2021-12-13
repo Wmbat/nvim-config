@@ -38,6 +38,9 @@ return require('packer').startup(function()
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons'
     }
+    use {
+        'stevearc/dressing.nvim'
+    }
 
     -- Terminal
     use 'akinsho/toggleterm.nvim'
@@ -57,10 +60,15 @@ return require('packer').startup(function()
         'p00f/nvim-ts-rainbow',
         requires = { 'nvim-treesitter/nvim-treesitter' }
     }
+    -- use 'folke/trouble.nvim'
+    use 'ray-x/lsp_signature.nvim'
 
     -- Snippets
     use 'saadparwaiz1/cmp_luasnip'
     use 'L3MON4D3/LuaSnip'
+
+    -- Programming 
+    use 'p00f/godbolt.nvim'
 
     -- C++ 
     use 'rhysd/vim-clang-format'

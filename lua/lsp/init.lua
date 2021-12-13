@@ -1,4 +1,6 @@
+require('lsp.snip')
 require('lsp.completion')
 require('lsp.lang')
 require('lsp.lspconfig')
+require('lsp.lsp_diagnostics')
 require('lsp.treesitter')

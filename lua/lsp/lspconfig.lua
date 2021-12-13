@@ -22,6 +22,13 @@ on_attach = function(client, bufnr)
     vim.api.nvim_set_keymap('n', '<space>n', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
     vim.api.nvim_set_keymap('n', '<space>t', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
     -- vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+    
+    require('lsp_signature').on_attach({
+        bind = true,
+        handler_opts = {
+            border = 'single' 
+        }
+    }, bufnr)
 end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -59,19 +66,9 @@ lsp.clojure_lsp.setup {
     capabilities = capabilities
 }
 
-vim.fn.sign_define('LspDiagnosticsSignError', { 
-    text = '', 
-    texthl = 'LspDiagnosticsSignError',
-    numhl = 'LspDiagnosticsSignError' })
-vim.fn.sign_define('LspDiagnosticsSignWarning', { 
-    text = '',
-    texthl = 'LspDiagnosticsSignWarning',
-    numhl = 'LspDiagnosticsSignWarning'})
-vim.fn.sign_define('LspDiagnosticsSignHint', { 
-    text = '', 
-    texthl = 'LspDiagnosticsSignHint',
-    numhl = 'LspDiagnosticsSignHint', })
-vim.fn.sign_define('LspDiagnosticsSignInformation', { 
-    text = '', 
-    texthl = 'LspDiagnosticsSignInformation',
-    numhl = 'LspDiagnosticsSignInformation', })
+local signs = { Error = '', Warning = '', Hint = '', Information = '' }
+
+for type, icon in pairs(signs) do
+  local hl = "LspDiagnosticsSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end

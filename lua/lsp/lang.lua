@@ -7,11 +7,13 @@ vim.g.python3_host_prog = '/usr/bin/python3'
 
 local autocmds = {
     cpp = {
-        -- Settings
+        {'BufEnter', '*.mpp', 'set filetype=cpp'};
+         -- Settings
         {'FileType cpp set foldmethod=expr'};
         {'FileType cpp set foldexpr=nvim_treesitter#foldexpr()'};
         {'FileType cpp set tabstop=3'};
         {'FileType cpp set shiftwidth=3'};
+    
         -- Keymaps 
         {'FileType cpp map <space>F :ClangFormat<CR>'}; 
         {'FileType cpp map <space>S <cmd>ClangdSwitchSourceHeader<CR>'}; 
