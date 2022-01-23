@@ -61,3 +61,7 @@ vim.api.nvim_set_keymap('i', '<S-Tab>', 'v:lua.smart_s_tab()', {expr = true, nor
 
 vim.api.nvim_set_keymap("i", "<C-j>", "<Plug>luasnip-next-choice", {})
 vim.api.nvim_set_keymap("s", "<C-j>", "<Plug>luasnip-next-choice", {})
+
+-- trouble
+
+vim.api.nvim_set_keymap('n', '<leader>xx', '<cmd>Trouble<cr>', opts)

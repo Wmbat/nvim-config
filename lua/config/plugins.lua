@@ -60,8 +60,13 @@ return require('packer').startup(function()
         'p00f/nvim-ts-rainbow',
         requires = { 'nvim-treesitter/nvim-treesitter' }
     }
-    -- use 'folke/trouble.nvim'
-    use 'ray-x/lsp_signature.nvim'
+    use { 'stevearc/aerial.nvim' }
+    use { 
+        'folke/trouble.nvim',
+        requires = 'kyazdani42/nvim-web-devicons'
+    }
+    use { 'ray-x/lsp_signature.nvim' }
+    use { 'RRethy/vim-illuminate' }
 
     -- Snippets
     use 'saadparwaiz1/cmp_luasnip'
