@@ -3,17 +3,21 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- Theming
-    use 'sainnhe/edge'
+    -- use 'sainnhe/edge'
+    use {
+        'wmbat/wmbat-dark',
+        requires = 'rktjmp/lush.nvim'
+    }
     use {
         'glepnir/galaxyline.nvim',
         branch = 'main',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
-    use 'ap/vim-css-color'
+    use 'norcalli/nvim-colorizer.lua'
     use 'kyazdani42/nvim-web-devicons'
 
     -- Zen
-    use 'Pocco81/TrueZen.nvim'
+    -- use 'Pocco81/TrueZen.nvim'
 
     -- Utility
     use 'nvim-lua/popup.nvim'
@@ -29,11 +33,11 @@ return require('packer').startup(function()
         'lewis6991/gitsigns.nvim',
         requires = 'nvim-lua/plenary.nvim'
     }
-    use { 
-        'vhyrro/neorg',
-        branch = 'unstable',
-        requires = 'nvim-lua/plenary.nvim',
-    }
+--    use { 
+--        'vhyrro/neorg',
+--        branch = 'unstable',
+--        requires = 'nvim-lua/plenary.nvim',
+--    }
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons'
@@ -44,6 +48,12 @@ return require('packer').startup(function()
 
     -- Terminal
     use 'akinsho/toggleterm.nvim'
+
+    use 'mfussenegger/nvim-dap'
+    use { 
+        'rcarriga/nvim-dap-ui', 
+        requires = { 'mfussenegger/nvim-dap' } 
+    }
 
     -- LSP
     use 'neovim/nvim-lspconfig'
@@ -65,7 +75,7 @@ return require('packer').startup(function()
         'folke/trouble.nvim',
         requires = 'kyazdani42/nvim-web-devicons'
     }
-    use { 'ray-x/lsp_signature.nvim' }
+    -- use { 'ray-x/lsp_signature.nvim' }
     use { 'RRethy/vim-illuminate' }
 
     -- Snippets
@@ -73,7 +83,7 @@ return require('packer').startup(function()
     use 'L3MON4D3/LuaSnip'
 
     -- Programming 
-    use 'p00f/godbolt.nvim'
+    -- use 'p00f/godbolt.nvim'
 
     -- C++ 
     use 'rhysd/vim-clang-format'

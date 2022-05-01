@@ -11,8 +11,8 @@ local autocmds = {
          -- Settings
         {'FileType cpp set foldmethod=expr'};
         {'FileType cpp set foldexpr=nvim_treesitter#foldexpr()'};
-        {'FileType cpp set tabstop=3'};
-        {'FileType cpp set shiftwidth=3'};
+        {'FileType cpp set tabstop=4'};
+        {'FileType cpp set shiftwidth=4'};
     
         -- Keymaps 
         {'FileType cpp map <space>F :ClangFormat<CR>'}; 

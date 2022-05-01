@@ -10,7 +10,7 @@ on_attach = function(client, bufnr)
     vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     
     vim.api.nvim_set_keymap('n', '<space>h', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    -- vim.api.nvim_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    vim.api.nvim_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     vim.api.nvim_set_keymap('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     -- vim.api.nvim_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     -- vim.api.nvim_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
@@ -23,12 +23,12 @@ on_attach = function(client, bufnr)
     vim.api.nvim_set_keymap('n', '<space>t', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
     -- vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
     
-    require('lsp_signature').on_attach({
-        bind = true,
-        handler_opts = {
-            border = 'single' 
-        }
-    }, bufnr)
+    -- require('lsp_signature').on_attach({
+    --     bind = true,
+    --     handler_opts = {
+    --         border = 'single' 
+    --     }
+    -- }, bufnr)
 
     require('aerial').on_attach(client, bufnr)
     require('illuminate').on_attach(client, bufnr)
@@ -54,6 +54,11 @@ lsp.clangd.setup {
 lsp.pyright.setup {
     on_attach = on_attach,
     root_dir = lsp.util.root_pattern('.git', vim.fn.getcwd()),
+    capabilities = capabilities
+}
+
+lsp.rust_analyzer.setup {
+    on_attach = on_attach,
     capabilities = capabilities
 }
 
