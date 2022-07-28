@@ -2,13 +2,13 @@ vim.o.background = 'dark'
 
 require('lush')(require('wmbat-dark').setup({
 	plugins = {
-		'lsp',
-		'treesitter',
 		'gitsigns',
-		'telescope',
-		'nvim-ts-rainbow',
+		'lsp',
 		'nvim-tree',
+		'nvim-ts-rainbow',
 		'vim-startify',
+		'telescope',
+		'treesitter',
 	},
 	langs = {
 		'cpp',

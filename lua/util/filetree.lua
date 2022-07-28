@@ -1,45 +1,4 @@
-vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_highlight_opened_files = 0
-vim.g.nvim_tree_root_folder_modifier = ':~'
-vim.g.nvim_tree_add_trailing = 1
-vim.g.nvim_tree_group_empty = 1
-vim.g.nvim_tree_icon_padding = ' '
-vim.g.nvim_tree_symlink_arrow = ' >> '
-vim.g.nvim_tree_respect_buf_cwd = 1
 vim.g.nvim_tree_refresh_wait = 500
-vim.g.nvim_tree_special_files = { 
-	['README.md'] = true, 
-	['Makefile'] = true, 
-	['MAKEFILE'] = true,
-	['buildfile'] = true,
-	['manifest'] = true,
-	['repositories.manifest'] = true,
-	['packages.manifest'] = true,
-}
-vim.g.nvim_tree_show_icons = { git = 1, folders = 1, files = 1, folder_arrows = 0, }
-vim.g.nvim_tree_icons = {
-	default = '',
-	symlink = '',
-	git = {
-		unstaged = "✗",
-		staged =  "✓",
-		unmerged = "",
-		renamed = "➜",
-		untracked = "★",
-		deleted = "",
-		ignored = "◌",
-	},
-	folder = {
-		arrow_open = "",
-		arrow_closed = "",
-		default = "",
-		open = "",
-		empty = "",
-		empty_open = "",
-		symlink = "",
-		symlink_open = "",
-	},
-}
 
 require('nvim-tree').setup {
 	disable_netrw = true,
@@ -49,6 +8,7 @@ require('nvim-tree').setup {
 	open_on_tab = false,
 	hijack_cursor = false,
 	update_cwd = false,
+	respect_buf_cwd = false,
 	view = {
 		width = 50,
 		side = 'left',
@@ -68,9 +28,55 @@ require('nvim-tree').setup {
 			none = "  ",
 		  },
 		},
-		icons = {
-		  webdev_colors = true,
+		add_trailing = true,
+		highlight_opened_files = "none",
+		root_folder_modifier = ":~",
+		special_files = {
+			"README.md",
+			"Makefile",
+			"MAKEFILE",
+			"buildfile",
+			"manifest",
+			"repositories.manifest",
+			"packages.manifest",
 		},
+		icons = {
+			webdev_colors = true,
+			git_placement = "before",
+			padding = " ",
+			symlink_arrow = " ➛ ",
+			show = {
+				file = true,
+				folder = true,
+				folder_arrow = true,
+				git = true,
+			},
+			glyphs = {
+				default = "",
+				symlink = "",
+				folder = {
+					arrow_closed = "",
+					arrow_open = "",
+					default = "",
+					open = "",
+					empty = "",
+					empty_open = "",
+					symlink = "",
+					symlink_open = "",
+				},
+				git = {
+					unstaged = "✗",
+					staged = "✓",
+					unmerged = "",
+					renamed = "➜",
+					untracked = "★",
+					deleted = "",
+					ignored = "◌",
+				},
+			},
+		},
+		highlight_git = true,
+		group_empty = true,
 	},
 	hijack_directories = {
 		enable = true,
@@ -124,6 +130,10 @@ require('nvim-tree').setup {
 				},
 			},
 		},
+	},
+	live_filter = {
+		prefix = "[FILTER]: ",
+		always_show_folders = true,
 	},
 	trash = {
 		cmd = "trash",

@@ -66,6 +66,10 @@ return require('packer').startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+	use {
+		'Badhi/nvim-treesitter-cpp-tools',
+		requires = { 'nvim-treesitter/nvim-treesitter' }
+	}
     use {
         'p00f/nvim-ts-rainbow',
         requires = { 'nvim-treesitter/nvim-treesitter' }
