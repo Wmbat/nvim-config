@@ -20,12 +20,12 @@ vim.opt.smartindent = true
 vim.opt.signcolumn = 'yes'
 vim.opt.hidden = true
 
-vim.opt.shortmess:append({c = true})
+vim.opt.shortmess:append({ c = true })
 
 vim.opt.list = true
 vim.opt.listchars = {
 	tab = '⇥ '
-} 
+}
 
 -- Globals
 
