@@ -8,7 +8,7 @@ on_attach = function(client, bufnr)
     vim.api.nvim_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
     vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    
+
     vim.api.nvim_set_keymap('n', '<space>h', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     vim.api.nvim_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     vim.api.nvim_set_keymap('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
@@ -22,7 +22,7 @@ on_attach = function(client, bufnr)
     vim.api.nvim_set_keymap('n', '<space>n', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
     vim.api.nvim_set_keymap('n', '<space>t', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     -- vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-    
+
     -- require('lsp_signature').on_attach({
     --     bind = true,
     --     handler_opts = {

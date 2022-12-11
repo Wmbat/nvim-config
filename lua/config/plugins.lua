@@ -3,9 +3,12 @@ return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 
 	-- Theming
-	-- use 'sainnhe/edge'
+	use {
+		'sainnhe/edge'
+	}
 	use {
 		'wmbat/wmbat-dark',
+		branch = 'user/wmbat/fix-theme',
 		requires = 'rktjmp/lush.nvim'
 	}
 	use {

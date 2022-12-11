@@ -89,7 +89,7 @@ lsp.on_attach(
 		bind('n', '<space>n', '<cmd>lua vim.diagnostic.goto_prev()<CR>', noremap)
 		bind('n', '<space>t', '<cmd>lua vim.diagnostic.goto_next()<CR>', noremap)
 
-    	require('aerial').on_attach(client, bufnr)
+    	-- require('aerial').on_attach(client, bufnr)
     	require('illuminate').on_attach(client, bufnr)
 	end
 )

@@ -1,19 +1,19 @@
-vim.o.background = 'dark'
+require('lush')(require('wmbat-dark'))
 
-require('lush')(require('wmbat-dark').setup({
-	plugins = {
-		'gitsigns',
-		'lsp',
-		'nvim-tree',
-		'nvim-ts-rainbow',
-		'vim-startify',
-		'telescope',
-		'treesitter',
-	},
-	langs = {
-		'cpp',
-	},
-}))
+-- require('lush')(require('wmbat-dark').setup({
+-- 	plugins = {
+-- 		'gitsigns',
+-- 		'lsp',
+-- 		'nvim-tree',
+-- 		'nvim-ts-rainbow',
+-- 		'vim-startify',
+-- 		'telescope',
+-- 		'treesitter',
+-- 	},
+-- 	langs = {
+-- 		'cpp',
+-- 	},
+-- }))
 
 require('dressing').setup({
 	input = {

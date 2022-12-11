@@ -20,17 +20,24 @@ require('nvim-tree').setup {
 		relativenumber = false
 	},
 	renderer = {
+		add_trailing = true,
+		group_empty = true,
+		highlight_git = true,
+		full_name = false,
+		highlight_opened_files = "none",
+		root_folder_modifier = ":~",
+		indent_width = 2,
 		indent_markers = {
 		  enable = false,
+		  inline_arrows = true,
 		  icons = {
-			corner = "└ ",
-			edge = "│ ",
+			corner = "└",
+			edge = "│",
+			item = "│",
+			bottom = "─",
 			none = "  ",
 		  },
 		},
-		add_trailing = true,
-		highlight_opened_files = "none",
-		root_folder_modifier = ":~",
 		special_files = {
 			"README.md",
 			"Makefile",
@@ -54,6 +61,7 @@ require('nvim-tree').setup {
 			glyphs = {
 				default = "",
 				symlink = "",
+				bookmark = "",
 				folder = {
 					arrow_closed = "",
 					arrow_open = "",
@@ -75,8 +83,6 @@ require('nvim-tree').setup {
 				},
 			},
 		},
-		highlight_git = true,
-		group_empty = true,
 	},
 	hijack_directories = {
 		enable = true,
@@ -87,7 +93,6 @@ require('nvim-tree').setup {
 		update_cwd  = false,
 		ignore_list = {}
 	},
-	ignore_ft_on_setup = {},
 	system_open = {
 		cmd  = nil,
 		args = {}
