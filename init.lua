@@ -1,4 +1,4 @@
 require('config')
-require('lsp')
+require('core')
 require('dev')
 require('util')

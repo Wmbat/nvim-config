@@ -29,6 +29,11 @@ vim.opt.listchars = {
 
 -- Globals
 
+-- Set the different python environment
+--
+vim.g.python_host_prog = '/usr/bin/python2'
+vim.g.python3_host_prog = '/usr/bin/python3'
+
 vim.g.move_map_keys = 0
 
 vim.cmd('set clipboard=unnamedplus')

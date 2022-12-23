@@ -7,6 +7,8 @@ vim.api.nvim_set_keymap('', 's', 'l', { noremap = true })
 vim.api.nvim_set_keymap('', 'b', 'n', { noremap = true })
 vim.api.nvim_set_keymap('', 'B', 'N', { noremap = true })
 
+vim.api.nvim_set_keymap('i', '<C-y>', '<C-t>', { noremap = true })
+
 vim.api.nvim_set_keymap('n', '<space>s', ':w<cr>', {})
 
 -- Window navigation
@@ -40,7 +42,7 @@ vim.api.nvim_set_keymap('n', ']t', '<cmd>lua require\"gitsigns.actions\".next_hu
 vim.api.nvim_set_keymap('n', ']n', '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>', opts)
 vim.api.nvim_set_keymap('n', 'ph', '<cmd>lua require\"gitsigns.actions\".preview_hunk()<CR>', opts)
 
-vim.api.nvim_set_keymap('n', '<space>F', ':LspZeroFormat<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<space>F', ':LspZeroFormat<CR>', opts)
 
 -- Completion
 

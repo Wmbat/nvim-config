@@ -2,9 +2,6 @@
 
 require('nvim_utils')
 
-vim.g.python_host_prog = '/usr/bin/python2'
-vim.g.python3_host_prog = '/usr/bin/python3'
-
 local autocmds = {
 	cpp = {
 		{ 'BufEnter', '*.mpp', 'set filetype=cpp' };
