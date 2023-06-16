@@ -9,7 +9,7 @@ lspkind.init({
         Function = '',
         Constructor = '',
         Variable = '',
-        Class = '',
+        Class = '',
         Interface = 'ﰮ',
         Module = '',
         Property = '',

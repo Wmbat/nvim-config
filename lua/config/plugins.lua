@@ -1,14 +1,12 @@
 return require('packer').startup(function()
 	-- Packer can manage itself
+	--
 	use 'wbthomason/packer.nvim'
 
 	-- Theming
-	use {
-		'sainnhe/edge'
-	}
+	--
 	use {
 		'wmbat/wmbat-dark',
-		branch = 'user/wmbat/fix-theme',
 		requires = 'rktjmp/lush.nvim'
 	}
 	use {
@@ -19,10 +17,8 @@ return require('packer').startup(function()
 	use 'norcalli/nvim-colorizer.lua'
 	use 'kyazdani42/nvim-web-devicons'
 
-	-- Zen
-	-- use 'Pocco81/TrueZen.nvim'
-
 	-- Utility
+	--
 	use 'nvim-lua/popup.nvim'
 	use 'norcalli/nvim_utils'
 	use 'matze/vim-move'
@@ -45,6 +41,7 @@ return require('packer').startup(function()
 	}
 
 	-- Terminal
+	--
 	use 'akinsho/toggleterm.nvim'
 
 	use 'mfussenegger/nvim-dap'
@@ -53,31 +50,33 @@ return require('packer').startup(function()
 		requires = { 'mfussenegger/nvim-dap' }
 	}
 
-	-- LSP
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		requires = {
-			-- LSP Support
-			{ 'neovim/nvim-lspconfig' },
-			{ 'williamboman/mason.nvim' },
-			{ 'williamboman/mason-lspconfig.nvim' },
+	-- LSP automatic install
+	--
+	use { 'williamboman/mason.nvim' }
+	use { 'williamboman/mason-lspconfig.nvim' }
 
-			-- Autocompletion
-			{ 'hrsh7th/nvim-cmp' },
-			{ 'hrsh7th/cmp-buffer' },
-			{ 'hrsh7th/cmp-path' },
-			{ 'saadparwaiz1/cmp_luasnip' },
-			{ 'hrsh7th/cmp-nvim-lsp' },
-			{ 'hrsh7th/cmp-nvim-lua' },
+	use { 'neovim/nvim-lspconfig' }
 
-			-- Snippets
-			{ 'L3MON4D3/LuaSnip' },
-			{ 'rafamadriz/friendly-snippets' },
-		}
-	}
+	-- Autocompletion
+	--
+	use { 'hrsh7th/nvim-cmp' }
+	use { 'hrsh7th/cmp-buffer' }
+	use { 'hrsh7th/cmp-path' }
+	use { 'saadparwaiz1/cmp_luasnip' }
+	use { 'hrsh7th/cmp-nvim-lsp' }
+	use { 'hrsh7th/cmp-nvim-lua' }
+
+	-- Snippets
+	--
+	use { 'L3MON4D3/LuaSnip' }
+	use { 'rafamadriz/friendly-snippets' }
+
+	-- LSP symbols
+	--
 	use { 'onsails/lspkind.nvim' }
 
 	-- Syntax Highlighting
+	--
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
@@ -95,16 +94,15 @@ return require('packer').startup(function()
 		'folke/trouble.nvim',
 		requires = 'kyazdani42/nvim-web-devicons'
 	}
-	-- use { 'ray-x/lsp_signature.nvim' }
+	use { 'ray-x/lsp_signature.nvim' }
 	use { 'RRethy/vim-illuminate' }
 
-	-- Programming
-	-- use 'p00f/godbolt.nvim'
-
 	-- Markdown
+	--
 	use 'iamcco/markdown-preview.nvim'
 
 	-- Analytics
+	--
 	use 'wakatime/vim-wakatime'
 	use 'andweeb/presence.nvim'
 

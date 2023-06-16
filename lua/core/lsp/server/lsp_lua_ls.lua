@@ -1,6 +1,6 @@
 -- Lua LSP config
 --
-require('lspconfig').sumneko_lua.setup({
+require('lspconfig').lua_ls.setup({
 	single_file_support = true,
 	flags = {
 		debounce_text_changes = 150,

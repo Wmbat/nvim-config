@@ -1,3 +1,5 @@
+require('aerial').setup()
+
 -- Set LSP keybinds
 --
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -13,7 +15,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			vim.keymap.set(mode, lhs, rhs, opts)
 		end
 
-		-- Displays hover information about the symbol under the cursor 
+		-- Displays hover information about the symbol under the cursor
 		--
 		bufmap('n', '<space>h', '<cmd>lua vim.lsp.buf.hover()<CR>')
 
@@ -57,12 +59,30 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		--
 		bufmap('n', '<space>t', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 
-		-- 
+		--
 		--
 		bufmap('n', '<space>F', '<cmd>lua vim.lsp.buf.format()<CR>')
+
+		--
+		--
+		bufmap('n', '<leader>a', '<cmd>AerialToggle!<CR>')
+
+		--
+		--
+		bufmap('n', '<leader>t', '<cmd>TroubleToggle<CR>')
+
+		--
+		--
+		bufmap('n', '<space>,', '<cmd>ClangdSwitchSourceHeader<CR>')
 
 		-- Attach illuminate plugin
 		--
 		require('illuminate').on_attach(client, bufnr)
+
+		-- Attach lsp_signature plugin
+		--
+		require('lsp_signature').on_attach({
+			hint_enable = false,
+		}, bufnr)
 	end
 })
