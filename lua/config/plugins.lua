@@ -103,7 +103,7 @@ return require('packer').startup(function()
 
 	-- Analytics
 	--
-	use 'wakatime/vim-wakatime'
+	-- use 'wakatime/vim-wakatime'
 	use 'andweeb/presence.nvim'
 
 end)
