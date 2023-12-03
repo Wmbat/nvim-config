@@ -8,6 +8,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		local bufnr = args.buf
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
 
+		--
+		--
+		-- client.server_capabilities.semanticTokensProvider = nil
+
 		-- local function to simplify setting keybinds
 		--
 		local bufmap = function(mode, lhs, rhs)
@@ -82,7 +86,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		-- Attach lsp_signature plugin
 		--
 		require('lsp_signature').on_attach({
-			hint_enable = false,
+			bind = true,
+            floating_window = true,
+            hint_enable = false,
+			handler_opts = {
+				border = "rounded",
+			},
 		}, bufnr)
 	end
 })

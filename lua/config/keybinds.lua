@@ -40,22 +40,27 @@ vim.api.nvim_set_keymap('n', '<A-n>', '<Plug>MoveLineUp', {})
 
 vim.api.nvim_set_keymap('n', ']t', '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']n', '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'ph', '<cmd>lua require\"gitsigns.actions\".preview_hunk()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>hp', '<cmd>lua require\"gitsigns.actions\".preview_hunk()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>hs', '<cmd>lua require\"gitsigns.actions\".stage_hunk()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>hS', '<cmd>lua require\"gitsigns.actions\".stage_buffer()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>hu', '<cmd>lua require\"gitsigns.actions\".undo_stage_hunk()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>hr', '<cmd>lua require\"gitsigns.actions\".reset_hunk()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>hR', '<cmd>lua require\"gitsigns.actions\".reset_buffer()<CR>', opts)
 
 -- vim.api.nvim_set_keymap('n', '<space>F', ':LspZeroFormat<CR>', opts)
 
 -- Completion
 
 local function t(str)
-	return vim.api.nvim_replace_termcodes(str, true, true, true)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
 function _G.smart_tab()
-	return vim.fn.pumvisible() == 1 and t '<C-n>' or t '<Tab>'
+    return vim.fn.pumvisible() == 1 and t '<C-n>' or t '<Tab>'
 end
 
 function _G.smart_s_tab()
-	return vim.fn.pumvisible() == 1 and t '<C-p>' or t '<S-Tab>'
+    return vim.fn.pumvisible() == 1 and t '<C-p>' or t '<S-Tab>'
 end
 
 vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.smart_tab()', { expr = true, noremap = true })
@@ -78,9 +83,9 @@ vim.api.nvim_set_keymap('n', '<F11>', '<cmd>lua require\'dap\'.step_into()<CR>',
 vim.api.nvim_set_keymap('n', '<F12>', '<cmd>lua require\'dap\'.step_out()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>lua require\'dap\'.toggle_breakpoint()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>B',
-	'<cmd>lua require\'dap\'.set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', opts)
+    '<cmd>lua require\'dap\'.set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>lp',
-	'<cmd>lua require\'dap\'.set_breakpoint(nil, nil, vim.fn.input(\'Log point message: \'))<CR>', opts)
+    '<cmd>lua require\'dap\'.set_breakpoint(nil, nil, vim.fn.input(\'Log point message: \'))<CR>', opts)
 
 --nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
 --nnoremap <silent> <leader>dl :lua require'dap'.repl.run_last()<CR>`
