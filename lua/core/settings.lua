@@ -28,7 +28,7 @@ vim.opt.shortmess:append({ c = true })
 
 vim.opt.list = true
 vim.opt.listchars = {
-	tab = '⇥ '
+    tab = '⇥ '
 }
 
 -- Globals
@@ -42,3 +42,5 @@ vim.g.move_map_keys = 0
 
 vim.cmd('set clipboard=unnamedplus')
 vim.cmd('autocmd BufNewFile,BufRead *.mpp :set filetype=cpp')
+
+vim.cmd [[set guifont=FiraCode\ Nerd\ Font:h11]]
