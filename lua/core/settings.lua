@@ -2,6 +2,10 @@ vim.o.completeopt = 'menuone,noselect,noinsert'
 vim.o.updatetime = 300
 vim.o.cmdheight = 2
 
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
 vim.opt.termguicolors = true
 
 vim.opt.hidden = true

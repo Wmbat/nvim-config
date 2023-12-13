@@ -23,7 +23,10 @@ return require('packer').startup(function()
     use 'norcalli/nvim_utils'
     use 'matze/vim-move'
     use 'mhinz/vim-startify'
-    use 'Konfekt/FastFold'
+    use {
+        'kevinhwang91/nvim-ufo',
+        requires = 'kevinhwang91/promise-async'
+    }
     use {
         'nvim-telescope/telescope.nvim',
         requires = 'nvim-lua/plenary.nvim'
@@ -39,10 +42,14 @@ return require('packer').startup(function()
     use {
         'stevearc/dressing.nvim'
     }
+    use 'folke/neodev.nvim'
 
     -- Terminal
     --
     use 'akinsho/toggleterm.nvim'
+
+    -- Debugging
+    --
 
     use 'mfussenegger/nvim-dap'
     use {
@@ -86,10 +93,10 @@ return require('packer').startup(function()
         'Badhi/nvim-treesitter-cpp-tools',
         requires = { 'nvim-treesitter/nvim-treesitter' }
     }
-    use {
-        'p00f/nvim-ts-rainbow',
-        requires = { 'nvim-treesitter/nvim-treesitter' }
-    }
+    -- use {
+    --     'p00f/nvim-ts-rainbow',
+    --     requires = { 'nvim-treesitter/nvim-treesitter' }
+    -- }
     use { 'stevearc/aerial.nvim' }
     use {
         'folke/trouble.nvim',

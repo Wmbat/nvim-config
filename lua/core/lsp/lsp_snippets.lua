@@ -31,7 +31,7 @@ ls.add_snippets('cpp', {
         namr = 'Apache License 2.0',
         dscr = 'The Apache License 2.0 for C++ files'
     }, {
-        text({ '/**', ' * Copyright ' }), func(year, {}), text({ ' ' }), insert(1, 'author'),
+        text({ '/**', ' * Copyright ' }), func(year, {}),
         text({ '', ' *' }),
         text({ '', ' * Licensed under the Apache License, Version 2.0 (the "License");' }),
         text({ '', ' * you may not use this file except in compliance with the License.' }),
@@ -70,7 +70,7 @@ ls.add_snippets('cpp', {
     }, {
         text({ '/**', ' * @file ' }), func(filename, {}),
         text({ '', ' * @brief ' }), insert(1, 'description'),
-        text({ '', ' * @copyright Copyright ' }), func(year, {}), text({ ' wmbat' }),
+        text({ '', ' * @copyright Copyright ' }), func(year, {}),
         text({ '', ' *' }),
         text({ '', ' * Licensed under the Apache License, Version 2.0 (the "License");' }),
         text({ '', ' * you may not use this file except in compliance with the License.' }),

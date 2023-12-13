@@ -11,6 +11,9 @@ vim.api.nvim_set_keymap('i', '<C-y>', '<C-t>', { noremap = true })
 
 vim.api.nvim_set_keymap('n', '<space>s', ':w<cr>', {})
 
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds);
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds);
+
 -- Window navigation
 
 vim.api.nvim_set_keymap('n', '<C-w>h', ':wincmd h<CR>', { silent = true })
