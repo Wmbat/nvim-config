@@ -42,5 +42,7 @@ vim.g.move_map_keys = 0
 
 vim.cmd('set clipboard=unnamedplus')
 vim.cmd('autocmd BufNewFile,BufRead *.mpp :set filetype=cpp')
+vim.cmd('autocmd BufNewFile,BufRead *.vert :set filetype=glsl')
+vim.cmd('autocmd BufNewFile,BufRead *.frag :set filetype=glsl')
 
 vim.cmd [[set guifont=FiraCode\ Nerd\ Font:h11]]

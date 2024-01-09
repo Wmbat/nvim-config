@@ -16,9 +16,16 @@ return require('packer').startup(function()
     }
     use 'norcalli/nvim-colorizer.lua'
     use 'kyazdani42/nvim-web-devicons'
+    use {
+        'HiPhish/nvim-ts-rainbow2',
+        requires = {
+            'nvim-treesitter/nvim-treesitter',
+        },
+    }
 
     -- Utility
     --
+    use 'windwp/nvim-autopairs'
     use 'nvim-lua/popup.nvim'
     use 'norcalli/nvim_utils'
     use 'matze/vim-move'
@@ -43,6 +50,7 @@ return require('packer').startup(function()
         'stevearc/dressing.nvim'
     }
     use 'folke/neodev.nvim'
+    use 'rmagatti/goto-preview'
 
     -- Terminal
     --
@@ -61,7 +69,6 @@ return require('packer').startup(function()
     --
     use { 'williamboman/mason.nvim' }
     use { 'williamboman/mason-lspconfig.nvim' }
-    use { 'mfussenegger/nvim-lint' }
 
     use { 'neovim/nvim-lspconfig' }
 
@@ -73,6 +80,7 @@ return require('packer').startup(function()
     use { 'saadparwaiz1/cmp_luasnip' }
     use { 'hrsh7th/cmp-nvim-lsp' }
     use { 'hrsh7th/cmp-nvim-lua' }
+    -- use { 'tzachar/cmp-ai', requires = 'hrsh7th/nvim-cmp' }
 
     -- Snippets
     --
@@ -93,21 +101,9 @@ return require('packer').startup(function()
         'Badhi/nvim-treesitter-cpp-tools',
         requires = { 'nvim-treesitter/nvim-treesitter' }
     }
-    -- use {
-    --     'p00f/nvim-ts-rainbow',
-    --     requires = { 'nvim-treesitter/nvim-treesitter' }
-    -- }
-    use { 'stevearc/aerial.nvim' }
-    use {
-        'folke/trouble.nvim',
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
+
     use { 'ray-x/lsp_signature.nvim' }
     use { 'RRethy/vim-illuminate' }
-
-    -- Markdown
-    --
-    use 'iamcco/markdown-preview.nvim'
 
     -- Analytics
     --

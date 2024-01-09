@@ -11,7 +11,7 @@ parser_configs.norg = {
 require('nvim-treesitter.configs').setup {
     ensure_installed = {
         'c',
-        'cpp',
+--        'cpp',
         'python',
         'go',
         'json',
@@ -27,6 +27,18 @@ require('nvim-treesitter.configs').setup {
 
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
+require('nvim-treesitter.configs').setup {
+    rainbow = {
+        enable = true,
+        -- list of languages you want to disable the plugin for
+        disable = { },
+        -- Which query to use for finding delimiters
+        query = 'rainbow-parens',
+        -- Highlight the entire buffer all at once
+        strategy = require('ts-rainbow').strategy.global,
+    }
+}
 
 require('nt-cpp-tools').setup({
     preview = {

@@ -13,6 +13,7 @@ vim.keymap.set('', 's', 'l', { noremap = true })
 vim.keymap.set('i', '<C-y>', '<C-t>', { noremap = true })
 
 vim.keymap.set('n', '<space>s', ':w<cr>', {})
+vim.keymap.set('n', '<space>S', ':wa<cr>', {})
 
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds);
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds);
@@ -25,11 +26,28 @@ vim.keymap.set('n', '<C-w>n', ':wincmd k<CR>', { silent = true })
 vim.keymap.set('n', '<C-w>s', ':wincmd l<CR>', { silent = true })
 
 -- Telescope
+local tl_builtin = require('telescope.builtin')
+vim.keymap.set('n', '<space>ff', tl_builtin.find_files, opts)
+vim.keymap.set('n', '<space>fg', tl_builtin.live_grep, opts)
+vim.keymap.set('n', '<space>fs', tl_builtin.lsp_workspace_symbols, opts)
+vim.keymap.set('n', '<space>gr', tl_builtin.lsp_references, opts)
+vim.keymap.set('n', '<space>gi', tl_builtin.lsp_implementations, opts)
+vim.keymap.set('n', '<space>gd', tl_builtin.lsp_definitions, opts)
+vim.keymap.set('n', '<space>gD', tl_builtin.lsp_type_definitions, opts)
 
-vim.keymap.set('n', '<space>ff', [[<cmd>lua require('telescope.builtin').find_files()<cr>]], opts)
-vim.keymap.set('n', '<space>fg', [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], opts)
-vim.keymap.set('n', '<space>fb', [[<cmd>lua require('telescope.builtin').buffers()<cr>]], opts)
-vim.keymap.set('n', '<space>fh', [[<cmd>lua require('telescope.builtin').help_tags()<cr>]], opts)
+vim.keymap.set('n', '<space>gs', tl_builtin.git_status, opts)
+vim.keymap.set('n', '<space>gc', tl_builtin.git_commits, opts)
+
+vim.keymap.set('n', '<space>dg', tl_builtin.diagnostics, opts)
+-- vim.keymap.set('n', '<space>fs', tl_builtin.buffers, opts)
+
+-- goto-preview
+local goto_preview = require('goto-preview')
+vim.keymap.set('n', 'gpd', goto_preview.goto_preview_definition, opts)
+vim.keymap.set('n', 'gpD', goto_preview.goto_preview_declaration, opts)
+vim.keymap.set('n', 'gpt', goto_preview.goto_preview_type_definition, opts)
+vim.keymap.set('n', 'gpi', goto_preview.goto_preview_implementation, opts)
+vim.keymap.set('n', 'gP', goto_preview.close_all_win, opts)
 
 -- File Explorer
 
@@ -76,10 +94,6 @@ vim.keymap.set('i', '<S-Tab>', 'v:lua.smart_s_tab()', { expr = true, noremap = t
 
 vim.keymap.set("i", "<C-j>", "<Plug>luasnip-next-choice", {})
 vim.keymap.set("s", "<C-j>", "<Plug>luasnip-next-choice", {})
-
--- trouble
-
-vim.keymap.set('n', '<leader>xx', '<cmd>Trouble<cr>', opts)
 
 -- Debugging
 
