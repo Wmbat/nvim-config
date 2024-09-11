@@ -60,17 +60,6 @@ vim.keymap.set('v', '<A-n>', '<Plug>MoveBlockUp', {})
 vim.keymap.set('n', '<A-t>', '<Plug>MoveLineDown', {})
 vim.keymap.set('n', '<A-n>', '<Plug>MoveLineUp', {})
 
--- gitsigns
-
-vim.keymap.set('n', ']t', '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>', opts)
-vim.keymap.set('n', ']n', '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>', opts)
-vim.keymap.set('n', '<leader>hp', '<cmd>lua require\"gitsigns.actions\".preview_hunk()<CR>', opts)
-vim.keymap.set('n', '<leader>hs', '<cmd>lua require\"gitsigns.actions\".stage_hunk()<CR>', opts)
-vim.keymap.set('n', '<leader>hS', '<cmd>lua require\"gitsigns.actions\".stage_buffer()<CR>', opts)
-vim.keymap.set('n', '<leader>hu', '<cmd>lua require\"gitsigns.actions\".undo_stage_hunk()<CR>', opts)
-vim.keymap.set('n', '<leader>hr', '<cmd>lua require\"gitsigns.actions\".reset_hunk()<CR>', opts)
-vim.keymap.set('n', '<leader>hR', '<cmd>lua require\"gitsigns.actions\".reset_buffer()<CR>', opts)
-
 -- vim.keymap.set('n', '<space>F', ':LspZeroFormat<CR>', opts)
 
 -- Completion

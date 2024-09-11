@@ -12,13 +12,14 @@ require('nvim-treesitter.configs').setup {
     ensure_installed = {
         'c',
 --        'cpp',
+        'c_sharp',
         'python',
         'go',
         'json',
         'clojure',
         'glsl',
         'toml',
-        'latex'
+        'xml',
     },
     highlight = {
         enable = true,
