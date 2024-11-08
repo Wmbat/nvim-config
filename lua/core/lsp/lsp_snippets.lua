@@ -51,9 +51,9 @@ ls.add_snippets('cpp', {
         namr = 'Function definition',
         dscr = 'Basic template of a C++ function definition'
     }, {
-        text({ 'auto ' }), insert(1, 'name'),
-        text({ '(' }), insert(2, 'params'), text({ ')' }),
-        text({ ' -> ' }), insert(3, 'return'), text({ ';', '' })
+        text({ 'auto ' }), insert(2, 'name'),
+        text({ '(' }), insert(3, 'params'), text({ ')' }),
+        text({ ' -> ' }), insert(4, 'return'), text({ ';', '' })
     }),
     snip({
         trig = 'brief',
@@ -83,7 +83,8 @@ ls.add_snippets('cpp', {
         text({ '', ' * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.' }),
         text({ '', ' * See the License for the specific language governing permissions and' }),
         text({ '', ' * limitations under the License.' }),
-        text({ '', ' */', '' })
+        text({ '', ' */', '', '' }),
+        text({ '#pragma once' }),
     }),
     snip({
         trig = 'concept',
@@ -93,5 +94,14 @@ ls.add_snippets('cpp', {
         text({ 'template<typename Type>' }),
         text({ '', 'concept ' }), insert(1, 'name'),
         text({ ' = ' }), insert(2, 'reqs'), text({ ';' })
+    }),
+    snip({
+        trig = 'lambda',
+        namr = 'lambda definition',
+        dscr = '',
+    }, {
+        text({ '[' }), insert(1, 'capture'), text({ ']' }),
+        text({ '(' }), insert(2, 'param'), text({ ')' }),
+        text({ '{' }), insert(3, 'body'), text({ '}' }),
     }),
 })

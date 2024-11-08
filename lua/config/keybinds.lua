@@ -1,14 +1,14 @@
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set('', 'Q', 'J', { noremap = true })
-vim.keymap.set('', 'j', 'b', { noremap = true })
-vim.keymap.set('', 'J', 'B', { noremap = true })
-vim.keymap.set('', 'b', 'n', { noremap = true })
-vim.keymap.set('', 'B', 'N', { noremap = true })
-vim.keymap.set('', 'h', 'h', { noremap = true })
-vim.keymap.set('', 't', 'j', { noremap = true })
-vim.keymap.set('', 'n', 'k', { noremap = true })
-vim.keymap.set('', 's', 'l', { noremap = true })
+-- vim.keymap.set('', 'Q', 'J', { noremap = true })
+-- vim.keymap.set('', 'j', 'b', { noremap = true })
+-- vim.keymap.set('', 'J', 'B', { noremap = true })
+-- vim.keymap.set('', 'b', 'n', { noremap = true })
+-- vim.keymap.set('', 'B', 'N', { noremap = true })
+-- vim.keymap.set('', 'h', 'h', { noremap = true })
+-- vim.keymap.set('', 't', 'j', { noremap = true })
+-- vim.keymap.set('', 'n', 'k', { noremap = true })
+-- vim.keymap.set('', 's', 'l', { noremap = true })
 
 vim.keymap.set('i', '<C-y>', '<C-t>', { noremap = true })
 
@@ -21,9 +21,9 @@ vim.keymap.set('n', 'zM', require('ufo').closeAllFolds);
 -- Window navigation
 
 vim.keymap.set('n', '<C-w>h', ':wincmd h<CR>', { silent = true })
-vim.keymap.set('n', '<C-w>t', ':wincmd j<CR>', { silent = true })
-vim.keymap.set('n', '<C-w>n', ':wincmd k<CR>', { silent = true })
-vim.keymap.set('n', '<C-w>s', ':wincmd l<CR>', { silent = true })
+vim.keymap.set('n', '<C-w>j', ':wincmd j<CR>', { silent = true })
+vim.keymap.set('n', '<C-w>k', ':wincmd k<CR>', { silent = true })
+vim.keymap.set('n', '<C-w>l', ':wincmd l<CR>', { silent = true })
 
 -- Telescope
 local tl_builtin = require('telescope.builtin')
@@ -51,7 +51,7 @@ vim.keymap.set('n', 'gP', goto_preview.close_all_win, opts)
 
 -- File Explorer
 
-vim.keymap.set('n', '<space>j', ':NvimTreeToggle<CR>', opts)
+vim.keymap.set('n', '<space>t', ':NvimTreeToggle<CR>', opts)
 
 -- vim-move
 
