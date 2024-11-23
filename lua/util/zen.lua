@@ -1,7 +1,7 @@
 local plugin_name = 'zen-mode'
 local is_loaded, zen = pcall(require, plugin_name)
 if not is_loaded then
-    vim.print(string.format(vim.g.failed_to_load_plugin_str, plugin_name))
+    vim.g.failed_to_load_plugin(plugin_name)
     return
 end
 
@@ -88,3 +88,5 @@ zen.setup({
     on_close = function()
     end,
 })
+
+vim.keymap.set('n', '<leader>zm', ':ZenMode<CR>', { noremap = true, silent = true })

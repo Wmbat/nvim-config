@@ -46,8 +46,8 @@ cmp.setup({
         ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
         ['<Down>'] = cmp.mapping.select_next_item(select_opts),
 
-        ['<C-n>'] = cmp.mapping.select_prev_item(select_opts),
-        ['<C-t>'] = cmp.mapping.select_next_item(select_opts),
+        ['<C-k>'] = cmp.mapping.select_prev_item(select_opts),
+        ['<C-j>'] = cmp.mapping.select_next_item(select_opts),
 
         -- ['<C-N>'] = cmp.mapping.scroll_docs(-4),
         -- ['<C-P>'] = cmp.mapping.scroll_docs(4),
@@ -55,7 +55,7 @@ cmp.setup({
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = false }),
 
-        ['<C-s>'] = cmp.mapping(function(fallback)
+        ['<C-l>'] = cmp.mapping(function(fallback)
             if luasnip.jumpable(1) then
                 luasnip.jump(1)
             else

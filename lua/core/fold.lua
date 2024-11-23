@@ -10,4 +10,14 @@ for _, ls in ipairs(language_servers) do
         -- you can add other fields for setting up lsp server in this table
     })
 end
-require('ufo').setup()
+
+local plugin_name = 'ufo'
+local is_loaded, ufo = pcall(require, plugin_name)
+if not is_loaded then
+    vim.g.failed_to_load_plugin(plugin_name)
+end
+
+ufo.setup()
+
+vim.keymap.set('n', 'zR', ufo.openAllFolds);
+vim.keymap.set('n', 'zM', ufo.closeAllFolds);

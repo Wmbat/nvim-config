@@ -15,6 +15,21 @@ vim.keymap.set('n', '<leader>dl', dap.step_into, { noremap = true, silent = true
 vim.keymap.set('n', '<leader>dh', dap.step_out, { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>B',
+    '<cmd>lua require\'dap\'.set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', opts)
+vim.keymap.set('n', '<leader>lp',
+    '<cmd>lua require\'dap\'.set_breakpoint(nil, nil, vim.fn.input(\'Log point message: \'))<CR>', opts)
+
+vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function() require('dap.ui.widgets').hover() end, opts)
+vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function() require('dap.ui.widgets').preview() end, opts)
+vim.keymap.set('n', '<Leader>df', function()
+    local widgets = require('dap.ui.widgets')
+    widgets.centered_float(widgets.frames)
+end)
+vim.keymap.set('n', '<Leader>ds', function()
+    local widgets = require('dap.ui.widgets')
+    widgets.centered_float(widgets.scopes)
+end)
 
 local dapui = require("dapui")
 

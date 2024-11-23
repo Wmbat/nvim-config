@@ -1,4 +1,10 @@
-require("bufferline").setup({
+local plugin_name = 'bufferline'
+local is_loaded, bufferline = pcall(require, plugin_name)
+if not is_loaded then
+    vim.g.failed_to_load_plugin(plugin_name)
+end
+
+bufferline.setup({
     options = {
         themable = true, -- allows highlight groups to be overriden i.e. sets highlights as default
         numbers = "none",
@@ -17,11 +23,11 @@ require("bufferline").setup({
         right_trunc_marker = ' ',
 
         max_name_length = 18,
-        max_prefix_length = 15,     -- prefix used when a buffer is de-duplicated
-        truncate_names = true,      -- whether or not tab names should be truncated
+        max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
+        truncate_names = true,  -- whether or not tab names should be truncated
         tab_size = 18,
         diagnostics = "nvim_lsp",
-        diagnostics_update_in_insert = false,     -- only applies to coc
-        diagnostics_update_on_event = true,       -- use nvim's diagnostic handler
+        diagnostics_update_in_insert = false, -- only applies to coc
+        diagnostics_update_on_event = true,   -- use nvim's diagnostic handler
     },
 })

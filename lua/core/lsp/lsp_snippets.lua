@@ -119,3 +119,6 @@ ls.add_snippets('markdown', {
         text({ '' }, { '## solution' }, { '' }),
     }),
 })
+
+vim.keymap.set("i", "<C-l>", "<Plug>luasnip-next-choice", {})
+vim.keymap.set("s", "<C-l>", "<Plug>luasnip-next-choice", {})

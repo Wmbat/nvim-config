@@ -1,4 +1,8 @@
-local dap = require('dap')
+local plugin_name = 'dap'
+local is_loaded, dap = pcall(require, plugin_name)
+if not is_loaded then
+    vim.g.failed_to_load_plugin(plugin_name)
+end
 
 dap.adapters.codelldb = {
     type = 'server',

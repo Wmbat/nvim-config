@@ -6,4 +6,8 @@ require('core.filetree')
 require('core.statusline')
 require('core.fold')
 
-vim.g.failed_to_load_plugin_str = "Failed to load '%s' plugin."
+---Prints out that a plugin failed to load. 
+---@param plugin_name string
+vim.g.failed_to_load_plugin = function(plugin_name)
+    vim.print(string.format("Failed to load '%s' plugin.", plugin_name))
+end

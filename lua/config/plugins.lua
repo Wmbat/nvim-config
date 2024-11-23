@@ -89,6 +89,7 @@ return require('packer').startup(function()
 
     use {
         'seblj/roslyn.nvim',
+        ft = 'cs'
     }
 
     -- Autocompletion

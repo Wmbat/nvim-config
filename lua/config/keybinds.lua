@@ -5,9 +5,6 @@ vim.keymap.set('i', '<C-y>', '<C-t>', { noremap = true })
 vim.keymap.set('n', '<space>s', ':w<cr>', {})
 vim.keymap.set('n', '<space>S', ':wa<cr>', {})
 
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds);
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds);
-
 -- Window navigation
 
 vim.keymap.set('n', '<C-w>h', ':wincmd h<CR>', { silent = true })
@@ -40,14 +37,6 @@ vim.keymap.set('n', '<space>gc', tl_builtin.git_commits, opts)
 vim.keymap.set('n', '<space>dg', tl_builtin.diagnostics, opts)
 vim.keymap.set('n', '<space>fb', tl_builtin.buffers, opts)
 
--- goto-preview
-local goto_preview = require('goto-preview')
-vim.keymap.set('n', 'gpd', goto_preview.goto_preview_definition, opts)
-vim.keymap.set('n', 'gpD', goto_preview.goto_preview_declaration, opts)
-vim.keymap.set('n', 'gpt', goto_preview.goto_preview_type_definition, opts)
-vim.keymap.set('n', 'gpi', goto_preview.goto_preview_implementation, opts)
-vim.keymap.set('n', 'gP', goto_preview.close_all_win, opts)
-
 -- File Explorer
 
 vim.keymap.set('n', '<space>t', ':NvimTreeToggle<CR>', opts)
@@ -77,32 +66,3 @@ end
 
 vim.keymap.set('i', '<Tab>', 'v:lua.smart_tab()', { expr = true, noremap = true })
 vim.keymap.set('i', '<S-Tab>', 'v:lua.smart_s_tab()', { expr = true, noremap = true })
-
--- luasnip
-
-vim.keymap.set("i", "<C-l>", "<Plug>luasnip-next-choice", {})
-vim.keymap.set("s", "<C-l>", "<Plug>luasnip-next-choice", {})
-
--- Debugging
-
-vim.keymap.set('n', '<leader>B',
-    '<cmd>lua require\'dap\'.set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', opts)
-vim.keymap.set('n', '<leader>lp',
-    '<cmd>lua require\'dap\'.set_breakpoint(nil, nil, vim.fn.input(\'Log point message: \'))<CR>', opts)
-
-vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function() require('dap.ui.widgets').hover() end, opts)
-vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function() require('dap.ui.widgets').preview() end, opts)
-vim.keymap.set('n', '<Leader>df', function()
-    local widgets = require('dap.ui.widgets')
-    widgets.centered_float(widgets.frames)
-end)
-vim.keymap.set('n', '<Leader>ds', function()
-    local widgets = require('dap.ui.widgets')
-    widgets.centered_float(widgets.scopes)
-end)
-
--- Zen Mode
---
-vim.keymap.set('n', '<leader>zm', ':ZenMode<CR>', opts)
-
---nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
