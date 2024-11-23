@@ -58,7 +58,6 @@ return require('packer').startup(function()
 
     -- Debugging
     --
-
     use 'mfussenegger/nvim-dap'
     use {
         'rcarriga/nvim-dap-ui',
@@ -80,7 +79,6 @@ return require('packer').startup(function()
     use { 'saadparwaiz1/cmp_luasnip' }
     use { 'hrsh7th/cmp-nvim-lsp' }
     use { 'hrsh7th/cmp-nvim-lua' }
-    -- use { 'tzachar/cmp-ai', requires = 'hrsh7th/nvim-cmp' }
 
     -- Snippets
     --
@@ -109,4 +107,9 @@ return require('packer').startup(function()
     --
     -- use 'wakatime/vim-wakatime'
     use 'andweeb/presence.nvim'
+
+    use {
+        'MeanderingProgrammer/render-markdown.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons' },
+    }
 end)
