@@ -29,6 +29,30 @@ return {
                 diagnostics = "nvim_lsp",
                 diagnostics_update_in_insert = false, -- only applies to coc
                 diagnostics_update_on_event = true,   -- use nvim's diagnostic handler
+                diagnostics_indicator = function(count, level)
+                    local icon = ' '
+                    if level:match("error") then
+                        icon = ' '
+                    elseif level:match("warn") then
+                        icon = ' '
+                    elseif level:match("hint") then
+                        icon = ' '
+                    end
+
+                    return " " .. icon .. count
+                end
+            },
+            highlights = {
+                fill = {
+                    fg = {
+                        attribute = "bg",
+                        highlight = "Pmenu",
+                    },
+                    bg = {
+                        attribute = "bg",
+                        highlight = "Pmenu",
+                    },
+                },
             },
         },
     },
@@ -95,7 +119,7 @@ return {
                 -- * a percentage of the width / height of the editor when <= 1
                 -- * a function that returns the width or the height
                 width = 120, -- width of the Zen window
-                height = 1, -- height of the Zen window
+                height = 1,  -- height of the Zen window
                 -- by default, no options are changed for the Zen window
                 -- uncomment any of the options below, or add other vim.wo options you want to apply
                 options = {
@@ -113,16 +137,16 @@ return {
                 -- comment the lines to not apply the options
                 options = {
                     enabled = true,
-                    ruler = false, -- disables the ruler text in the cmd line area
+                    ruler = false,   -- disables the ruler text in the cmd line area
                     showcmd = false, -- disables the command in the last line of the screen
                     -- you may turn on/off statusline in zen mode by setting 'laststatus'
                     -- statusline will be shown only if 'laststatus' == 3
-                    laststatus = 0,         -- turn off the statusline in zen mode
+                    laststatus = 0,             -- turn off the statusline in zen mode
                 },
-                twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
+                twilight = { enabled = true },  -- enable to start Twilight when zen mode opens
                 gitsigns = { enabled = false }, -- disables git signs
-                tmux = { enabled = false }, -- disables the tmux statusline
-                todo = { enabled = false }, -- if set to "true", todo-comments.nvim highlights will be disabled
+                tmux = { enabled = false },     -- disables the tmux statusline
+                todo = { enabled = false },     -- if set to "true", todo-comments.nvim highlights will be disabled
                 -- this will change the font size on kitty when in zen mode
                 -- to make this work, you need to set the following kitty options:
                 -- - allow_remote_control socket-only

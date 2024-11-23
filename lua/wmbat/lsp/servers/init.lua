@@ -1,3 +1,4 @@
+require("wmbat.lsp.servers.lsp_bash")
 require('wmbat.lsp.servers.lsp_clangd')
 require('wmbat.lsp.servers.lsp_clojure')
 require('wmbat.lsp.servers.lsp_gopls')
