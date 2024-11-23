@@ -57,6 +57,9 @@ return require('packer').startup(function()
         tag = "*",
         requires = 'nvim-tree/nvim-web-devicons'
     }
+    use {
+        'stevearc/aerial.nvim',
+    }
 
     -- Terminal
     --
@@ -76,6 +79,8 @@ return require('packer').startup(function()
     use { 'williamboman/mason-lspconfig.nvim' }
 
     use { 'neovim/nvim-lspconfig' }
+
+    use { 'seblj/roslyn.nvim' }
 
     -- Autocompletion
     --

@@ -105,3 +105,17 @@ ls.add_snippets('cpp', {
         text({ '{' }), insert(3, 'body'), text({ '}' }),
     }),
 })
+
+ls.add_snippets('markdown', {
+    snip({
+        trig = 'investigation',
+        namr = 'bug investigation',
+        dscr = '',
+    }, {
+        text({ '# ' }, insert(1, 'bug title'), { '' }),
+        text({ '' }, { '[Link to work item](' }, insert(2, 'link'), { ')' }, { '' }),
+        text({ '' }, { '## How to setup' }, { '' }),
+        text({ '' }, { '## Investigation' }, { '' }),
+        text({ '' }, { '## solution' }, { '' }),
+    }),
+})

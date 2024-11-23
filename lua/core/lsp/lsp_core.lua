@@ -1,7 +1,12 @@
 -- Install language servers
 --
 require('mason').setup({
-    PATH = "prepend"
+    PATH = "prepend",
+    registries = {
+        "github:mason-org/mason-registry",
+        -- "github:seblj/roslyn.nvim",
+        "github:Crashdummyy/mason-registry",
+    },
 })
 require('mason-lspconfig').setup()
 

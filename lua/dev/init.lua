@@ -27,3 +27,4 @@ require('goto-preview').setup({
 -- require('dev.asm_godbolt')
 
 -- require('nvim-biscuits').setup({})
+require('aerial').setup()

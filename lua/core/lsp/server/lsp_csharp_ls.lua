@@ -1,5 +1,6 @@
 local lspconfig = require('lspconfig')
 
--- csharp_ls config
---
-lspconfig.csharp_ls.setup({})
+lspconfig.csharp_ls.setup({
+    root_dir = lspconfig.util.root_pattern('AllSecurityCenter.Generated.sln', '.sln', '.git'),
+    filetypes = { 'cs', 'vb', 'csproj', 'sln', 'slnx', 'props', 'csx', 'targets' },
+})

@@ -28,7 +28,8 @@ vim.keymap.set('n', '<C-w>l', ':wincmd l<CR>', { silent = true })
 -- buffer navigation
 --
 vim.keymap.set('n', '<space>bn', ':bn<CR>', opts);
-vim.keymap.set('n', '<space>bp', ':bn<CR>', opts);
+vim.keymap.set('n', '<space>bp', ':bp<CR>', opts);
+vim.keymap.set('n', '<space>bd', ':bd<CR>', opts);
 
 -- Telescope
 local tl_builtin = require('telescope.builtin')
@@ -40,11 +41,14 @@ vim.keymap.set('n', '<space>gi', tl_builtin.lsp_implementations, opts)
 vim.keymap.set('n', '<space>gd', tl_builtin.lsp_definitions, opts)
 vim.keymap.set('n', '<space>gD', tl_builtin.lsp_type_definitions, opts)
 
+local tl_aerial = require('telescope').extensions.aerial
+vim.keymap.set('n', '<space>fa', tl_aerial.aerial, opts)
+
 vim.keymap.set('n', '<space>gs', tl_builtin.git_status, opts)
 vim.keymap.set('n', '<space>gc', tl_builtin.git_commits, opts)
 
 vim.keymap.set('n', '<space>dg', tl_builtin.diagnostics, opts)
--- vim.keymap.set('n', '<space>fs', tl_builtin.buffers, opts)
+vim.keymap.set('n', '<space>fb', tl_builtin.buffers, opts)
 
 -- goto-preview
 local goto_preview = require('goto-preview')
