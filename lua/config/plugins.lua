@@ -50,6 +50,7 @@ return require('packer').startup(function()
         'stevearc/dressing.nvim'
     }
     use 'folke/neodev.nvim'
+    use 'folke/zen-mode.nvim'
     use 'rmagatti/goto-preview'
     use {
         'akinsho/bufferline.nvim',

@@ -20,6 +20,7 @@ require('nvim-treesitter.configs').setup {
         'glsl',
         'toml',
         'xml',
+        'latex',
     },
     highlight = {
         enable = true,

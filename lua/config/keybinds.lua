@@ -113,5 +113,8 @@ vim.keymap.set('n', '<Leader>ds', function()
     widgets.centered_float(widgets.scopes)
 end)
 
+-- Zen Mode
+--
+vim.keymap.set('n', '<leader>zm', ':ZenMode<CR>', opts)
 
 --nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
