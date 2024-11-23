@@ -1,6 +1,6 @@
 require('util.discord')
 require('util.markdown')
--- require('util.startify')
 require('util.buffer_line')
+require('util.start_menu')
 require('util.zen')
 require('nvim-autopairs').setup({})

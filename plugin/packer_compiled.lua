@@ -115,7 +115,6 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["dashboard-nvim"] = {
-    config = { "\27LJ\2\n€\1\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\0025\3\5\0=\3\6\2B\0\2\1K\0\1\0\thide\1\0\3\ftabline\2\15statusline\2\vwinbar\2\vconfig\1\0\a\19shuffle_letter\1\18shortcut_type\vnumber\17disable_move\1\vconfig\0\ntheme\nhyper\thide\0\23change_to_vcs_root\1\nsetup\14dashboard\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -326,15 +325,15 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType cs ++once lua require("packer.load")({'roslyn.nvim'}, { ft = "cs" }, _G.packer_plugins)]]
+vim.cmd [[au FileType vb ++once lua require("packer.load")({'roslyn.nvim'}, { ft = "vb" }, _G.packer_plugins)]]
+vim.cmd [[au FileType csproj ++once lua require("packer.load")({'roslyn.nvim'}, { ft = "csproj" }, _G.packer_plugins)]]
 vim.cmd [[au FileType sln ++once lua require("packer.load")({'roslyn.nvim'}, { ft = "sln" }, _G.packer_plugins)]]
 vim.cmd [[au FileType slnx ++once lua require("packer.load")({'roslyn.nvim'}, { ft = "slnx" }, _G.packer_plugins)]]
 vim.cmd [[au FileType props ++once lua require("packer.load")({'roslyn.nvim'}, { ft = "props" }, _G.packer_plugins)]]
 vim.cmd [[au FileType csx ++once lua require("packer.load")({'roslyn.nvim'}, { ft = "csx" }, _G.packer_plugins)]]
 vim.cmd [[au FileType targets ++once lua require("packer.load")({'roslyn.nvim'}, { ft = "targets" }, _G.packer_plugins)]]
 vim.cmd [[au FileType xaml ++once lua require("packer.load")({'roslyn.nvim'}, { ft = "xaml" }, _G.packer_plugins)]]
-vim.cmd [[au FileType cs ++once lua require("packer.load")({'roslyn.nvim'}, { ft = "cs" }, _G.packer_plugins)]]
-vim.cmd [[au FileType vb ++once lua require("packer.load")({'roslyn.nvim'}, { ft = "vb" }, _G.packer_plugins)]]
-vim.cmd [[au FileType csproj ++once lua require("packer.load")({'roslyn.nvim'}, { ft = "csproj" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
