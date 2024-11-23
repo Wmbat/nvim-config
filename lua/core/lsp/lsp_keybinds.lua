@@ -55,11 +55,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         -- Go to the previous diagnostic
         --
-        bufmap('n', '<space>n', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+        bufmap('n', '<space>k', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 
         -- Go to the next diagnostic
         --
-        bufmap('n', '<space>t', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+        bufmap('n', '<space>j', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 
         --
         --

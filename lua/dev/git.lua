@@ -60,17 +60,17 @@ require('gitsigns').setup {
         end
 
         -- Navigation
-        map('n', ']t', function()
+        map('n', ']j', function()
             if vim.wo.diff then
-                vim.cmd.normal({']t', bang = true})
+                vim.cmd.normal({']j', bang = true})
             else
                 gitsigns.nav_hunk('next')
             end
         end)
 
-        map('n', ']n', function()
+        map('n', ']k', function()
             if vim.wo.diff then
-                vim.cmd.normal({']n', bang = true})
+                vim.cmd.normal({']k', bang = true})
             else
                 gitsigns.nav_hunk('prev')
             end
@@ -89,6 +89,7 @@ require('gitsigns').setup {
         map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
         map('n', '<leader>hd', gitsigns.diffthis)
         map('n', '<leader>hD', function() gitsigns.diffthis('~') end)
+        map('n', '<leader>td', gitsigns.toggle_deleted)
         map('n', '<leader>twd', gitsigns.toggle_word_diff)
     end
 }
