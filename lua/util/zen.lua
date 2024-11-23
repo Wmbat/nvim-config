@@ -1,4 +1,11 @@
-require('zen-mode').setup({
+local plugin_name = 'zen-mode'
+local is_loaded, zen = pcall(require, plugin_name)
+if not is_loaded then
+    vim.print(string.format(vim.g.failed_to_load_plugin_str, plugin_name))
+    return
+end
+
+zen.setup({
 
     window = {
         backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal

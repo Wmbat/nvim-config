@@ -1,6 +1,7 @@
-local is_loaded, presence = pcall(require, 'presence')
+local plugin_name = 'presence'
+local is_loaded, presence = pcall(require, plugin_name)
 if not is_loaded then
-    vim.print("Failed to load 'presence' plugin.")
+    vim.print(string.format(vim.g.failed_to_load_plugin_str, plugin_name))
     return
 end
 

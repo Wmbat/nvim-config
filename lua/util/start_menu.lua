@@ -1,6 +1,7 @@
-local is_loaded, dashboard = pcall(require, 'dashboard')
+local plugin_name = 'dashboard'
+local is_loaded, dashboard = pcall(require, plugin_name)
 if not is_loaded then
-    vim.print("Failed to load 'dashboard' plugin.")
+    vim.print(string.format(vim.g.failed_to_load_plugin_str, plugin_name))
     return
 end
 
