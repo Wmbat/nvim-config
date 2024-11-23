@@ -27,6 +27,7 @@ vim.opt.hidden = true
 vim.opt.shortmess:append({ c = true })
 
 vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- Globals
 

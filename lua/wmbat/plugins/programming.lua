@@ -229,7 +229,7 @@ return {
     },
     {
         "seblj/roslyn.nvim",
-        ft = "cs",
+        ft = "cs, csproj, sln, xaml",
     },
     { "ray-x/lsp_signature.nvim" },
     {

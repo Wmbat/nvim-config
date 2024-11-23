@@ -1,6 +1,7 @@
 return {
     "wmbat/wmbat-dark",
     priority = 1000,
+    commit = "c72d5e8",
     dependencies = {
         "rktjmp/lush.nvim"
     },
