@@ -1,4 +1,5 @@
 require('util.discord')
 require('util.markdown')
 require('util.startify')
+require('util.buffer_line')
 require('nvim-autopairs').setup({})

@@ -25,6 +25,11 @@ vim.keymap.set('n', '<C-w>j', ':wincmd j<CR>', { silent = true })
 vim.keymap.set('n', '<C-w>k', ':wincmd k<CR>', { silent = true })
 vim.keymap.set('n', '<C-w>l', ':wincmd l<CR>', { silent = true })
 
+-- buffer navigation
+--
+vim.keymap.set('n', '<space>bn', ':bn<CR>', opts);
+vim.keymap.set('n', '<space>bp', ':bn<CR>', opts);
+
 -- Telescope
 local tl_builtin = require('telescope.builtin')
 vim.keymap.set('n', '<space>ff', tl_builtin.find_files, opts)
@@ -81,8 +86,8 @@ vim.keymap.set('i', '<S-Tab>', 'v:lua.smart_s_tab()', { expr = true, noremap = t
 
 -- luasnip
 
-vim.keymap.set("i", "<C-j>", "<Plug>luasnip-next-choice", {})
-vim.keymap.set("s", "<C-j>", "<Plug>luasnip-next-choice", {})
+vim.keymap.set("i", "<C-l>", "<Plug>luasnip-next-choice", {})
+vim.keymap.set("s", "<C-l>", "<Plug>luasnip-next-choice", {})
 
 -- Debugging
 

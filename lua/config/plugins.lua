@@ -51,6 +51,11 @@ return require('packer').startup(function()
     }
     use 'folke/neodev.nvim'
     use 'rmagatti/goto-preview'
+    use {
+        'akinsho/bufferline.nvim',
+        tag = "*",
+        requires = 'nvim-tree/nvim-web-devicons'
+    }
 
     -- Terminal
     --
