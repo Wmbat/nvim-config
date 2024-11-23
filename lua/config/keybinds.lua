@@ -1,15 +1,5 @@
 local opts = { noremap = true, silent = true }
 
--- vim.keymap.set('', 'Q', 'J', { noremap = true })
--- vim.keymap.set('', 'j', 'b', { noremap = true })
--- vim.keymap.set('', 'J', 'B', { noremap = true })
--- vim.keymap.set('', 'b', 'n', { noremap = true })
--- vim.keymap.set('', 'B', 'N', { noremap = true })
--- vim.keymap.set('', 'h', 'h', { noremap = true })
--- vim.keymap.set('', 't', 'j', { noremap = true })
--- vim.keymap.set('', 'n', 'k', { noremap = true })
--- vim.keymap.set('', 's', 'l', { noremap = true })
-
 vim.keymap.set('i', '<C-y>', '<C-t>', { noremap = true })
 
 vim.keymap.set('n', '<space>s', ':w<cr>', {})
@@ -95,17 +85,11 @@ vim.keymap.set("s", "<C-l>", "<Plug>luasnip-next-choice", {})
 
 -- Debugging
 
-vim.keymap.set('n', '<F5>', '<cmd>lua require\'dap\'.continue()<CR>', opts)
-vim.keymap.set('n', '<F10>', '<cmd>lua require\'dap\'.step_over()<CR>', opts)
-vim.keymap.set('n', '<F11>', '<cmd>lua require\'dap\'.step_into()<CR>', opts)
-vim.keymap.set('n', '<F12>', '<cmd>lua require\'dap\'.step_out()<CR>', opts)
-vim.keymap.set('n', '<leader>b', '<cmd>lua require\'dap\'.toggle_breakpoint()<CR>', opts)
 vim.keymap.set('n', '<leader>B',
     '<cmd>lua require\'dap\'.set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', opts)
 vim.keymap.set('n', '<leader>lp',
     '<cmd>lua require\'dap\'.set_breakpoint(nil, nil, vim.fn.input(\'Log point message: \'))<CR>', opts)
 
-vim.keymap.set('n', '<leader>dl', function() require('dap').run_last() end, opts)
 vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function() require('dap.ui.widgets').hover() end, opts)
 vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function() require('dap.ui.widgets').preview() end, opts)
 vim.keymap.set('n', '<Leader>df', function()

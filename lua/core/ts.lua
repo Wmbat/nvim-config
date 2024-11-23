@@ -1,14 +1,9 @@
-local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
-
-parser_configs.norg = {
-    install_info = {
-        url = "https://github.com/vhyrro/tree-sitter-norg",
-        files = { "src/parser.c", "src/scanner.cc" },
-        branch = "main"
-    },
-}
-
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.configs').setup({
+    modules = {},
+    sync_install = true,
+    auto_install = true,
+    ignore_install = {},
+    parser_install_dir = nil,
     ensure_installed = {
         'c',
         'cpp',
@@ -21,26 +16,15 @@ require('nvim-treesitter.configs').setup {
         'toml',
         'xml',
         'latex',
+        'powershell',
     },
     highlight = {
         enable = true,
     },
-}
+})
 
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-
--- require('nvim-treesitter.configs').setup {
---     rainbow = {
---         enable = true,
---         -- list of languages you want to disable the plugin for
---         disable = { },
---         -- Which query to use for finding delimiters
---         query = 'rainbow-parens',
---         -- Highlight the entire buffer all at once
---         strategy = require('ts-rainbow').strategy.global,
---     }
--- }
 
 require('nt-cpp-tools').setup({
     preview = {

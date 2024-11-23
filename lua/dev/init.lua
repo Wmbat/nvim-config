@@ -1,4 +1,4 @@
-require('dev.debug')
+require('dev.debugging')
 require('dev.git')
 require('dev.terminal')
 require('goto-preview').setup({
@@ -28,3 +28,4 @@ require('goto-preview').setup({
 
 -- require('nvim-biscuits').setup({})
 require('aerial').setup()
+require('diffview').setup()

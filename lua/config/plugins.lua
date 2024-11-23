@@ -60,6 +60,9 @@ return require('packer').startup(function()
     use {
         'stevearc/aerial.nvim',
     }
+    use {
+        'sindrets/diffview.nvim'
+    }
 
     -- Terminal
     --
@@ -80,7 +83,10 @@ return require('packer').startup(function()
 
     use { 'neovim/nvim-lspconfig' }
 
-    use { 'seblj/roslyn.nvim' }
+    use {
+        'seblj/roslyn.nvim',
+        ft = { 'cs', 'vb', 'csproj', 'sln', 'slnx', 'props', 'csx', 'targets', 'xaml' },
+    }
 
     -- Autocompletion
     --
