@@ -31,8 +31,8 @@ vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- Globals
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+-- vim.g.mapleader = " "
+-- vim.g.maplocalleader = "\\"
 
 -- Set the different python environment
 --

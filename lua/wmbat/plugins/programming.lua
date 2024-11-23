@@ -1,7 +1,15 @@
 return {
-    { "williamboman/mason.nvim" },
+    {
+        "williamboman/mason.nvim",
+        config = function()
+            require("mason").setup({})
+        end,
+    },
     { "williamboman/mason-lspconfig.nvim" },
-    { "neovim/nvim-lspconfig" },
+    {
+        "neovim/nvim-lspconfig",
+        event = { "BufReadPre", "BufNewFile" },
+    },
     { 'L3MON4D3/LuaSnip' },
     { 'rafamadriz/friendly-snippets' },
     {
@@ -217,8 +225,8 @@ return {
                 -- }
             },
             floating = {
-                max_height = nil, -- These can be integers or a float between 0 and 1.
-                max_width = nil, -- Floats will be treated as percentage of your screen.
+                max_height = nil,  -- These can be integers or a float between 0 and 1.
+                max_width = nil,   -- Floats will be treated as percentage of your screen.
                 border = "single", -- Border style. Can be "single", "double" or "rounded"
                 mappings = {
                     close = { "q", "<Esc>" },
@@ -261,6 +269,20 @@ return {
         "kevinhwang91/nvim-ufo",
         dependencies = {
             "kevinhwang91/promise-async",
+        },
+    },
+    {
+        "TheLeoP/powershell.nvim",
+        opts = {
+            bundle_path = "C:\\Users\\hspehner\\AppData\\Local\\nvim-data\\mason\\packages\\powershell-editor-services\\",
+            settings = {
+                powershell = {
+                    codeFormatting = { Preset = 'OTBS' }
+                }
+            },
+            init_options = {
+                enableProfileLoading = false,
+            },
         },
     }
 }
