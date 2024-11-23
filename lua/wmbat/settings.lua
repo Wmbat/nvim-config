@@ -26,12 +26,12 @@ vim.opt.hidden = true
 
 vim.opt.shortmess:append({ c = true })
 
-vim.opt.list = true
-vim.opt.listchars = {
-    tab = '⇥ '
-}
+vim.opt.foldmethod = 'expr'
 
 -- Globals
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 -- Set the different python environment
 --
@@ -47,3 +47,16 @@ vim.cmd('autocmd BufNewFile,BufRead *.vert :set filetype=glsl')
 vim.cmd('autocmd BufNewFile,BufRead *.frag :set filetype=glsl')
 
 vim.cmd [[set guifont=FiraCode\ Nerd\ Font:h11]]
+
+local sign = function(opts)
+  vim.fn.sign_define(opts.name, {
+    texthl = opts.name,
+    text = opts.text,
+    numhl = ''
+  })
+end
+
+sign({name = 'DiagnosticSignError', text = ''})
+sign({name = 'DiagnosticSignWarn', text = ''})
+sign({name = 'DiagnosticSignHint', text = ''})
+sign({name = 'DiagnosticSignInfo', text = ''})

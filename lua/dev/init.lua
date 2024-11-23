@@ -1,5 +1,0 @@
-require('dev.debugging')
-require('dev.git')
-require('dev.preview')
-require('dev.terminal')
-require('aerial').setup()
