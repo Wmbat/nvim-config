@@ -62,7 +62,7 @@ return require('packer').startup(function()
     use 'mfussenegger/nvim-dap'
     use {
         'rcarriga/nvim-dap-ui',
-        requires = { 'mfussenegger/nvim-dap' }
+        requires = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' }
     }
 
     -- LSP automatic install
