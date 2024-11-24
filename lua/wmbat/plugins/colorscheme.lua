@@ -16,6 +16,9 @@ return {
                 'treesitter',
                 'lsp',
             },
+            languages = {
+                'cpp',
+            }
         }))
 
         -- require('lush')(require('wmbat-dark').setup({
