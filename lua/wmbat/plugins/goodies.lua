@@ -199,7 +199,9 @@ return {
         opts = {},
     },
     { -- Shows the hex colour directly in vim
-        "norcalli/nvim-colorizer.lua"
+        "norcalli/nvim-colorizer.lua",
+        event = "BufReadPre",
+        opts = {},
     },
     { -- I want to tell the discord world I program
         "andweeb/presence.nvim",
