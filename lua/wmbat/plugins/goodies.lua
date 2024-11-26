@@ -319,6 +319,6 @@ return {
                 -- defaults to false.
                 annotate = false,
             },
-        }
-    }
+        },
+    },
 }
