@@ -260,7 +260,7 @@ return {
     { "ray-x/lsp_signature.nvim" },
     {
         "seblj/roslyn.nvim",
-        ft = "cs, csproj, sln, xaml",
+        ft = "cs",
         opts = {
 
         },
