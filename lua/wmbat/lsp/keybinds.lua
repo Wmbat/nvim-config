@@ -55,7 +55,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         --
         --
-        vim.keymap.set("n", "<space>F", vim.lsp.buf.format, { buffer = bufnr, remap = false })
+        vim.keymap.set("n", "<space>F", function()
+            vim.lsp.buf.format({
+                async = true,
+                -- filter = function(format_client)
+                --     return format_client.name == "null-ls"
+                -- end,
+            })
+        end, { buffer = bufnr, remap = false })
 
         --
         --
