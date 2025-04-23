@@ -15,6 +15,7 @@ return {
                 'telescope',
                 'treesitter',
                 'lsp',
+                'diffview',
             },
             languages = {
                 'cpp',
